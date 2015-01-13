@@ -1,0 +1,49 @@
+{
+  "name": "main",
+  "description": "Banki.ru 10 Years Promo main build.",
+  "version": "0.0.1",
+  "keywords": [
+    "css",
+    "less",
+    "responsive",
+    "front-end",
+    "web"
+  ],
+  "homepage": "http://maximdenisov.ru",
+  "author": "Maxim Denisov",
+  "style": "dist/css/main.css",
+  "less": "assets/less/main.less",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-autoprefixer": "~0.7.6",
+    "grunt-banner": "~0.2.3",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-concat": "~0.4.0",
+    "grunt-contrib-connect": "~0.8.0",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-csslint": "~0.2.0",
+    "grunt-contrib-cssmin": "~0.10.0",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-less": "~0.11.3",
+    "grunt-contrib-qunit": "~0.5.1",
+    "grunt-contrib-uglify": "~0.5.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-csscomb": "~2.0.1",
+    "load-grunt-tasks": "~0.6.0",
+    "time-grunt": "~0.3.2"
+  },
+  "build": {
+    "css" : [
+      "vendor/bower/fancybox/source/jquery.fancybox.css",
+      "assets/css/**/*.css"
+    ],
+    "js": [
+      "vendor/bower/jquery/dist/jquery.js",
+      "vendor/bower/isotope/dist/isotope.pkgd.js",
+      "vendor/bower/skrollr/src/skrollr.js",
+      "vendor/bower/fancybox/source/jquery.fancybox.pack.js",
+      "vendor/bower/queryloader2/queryloader2.min.js",
+      "assets/js/**/*.js"
+    ]
+  }
+}
