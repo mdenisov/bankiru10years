@@ -174,17 +174,18 @@ $(function() {
 	//		scrollTop: 64000
 	//	}, 2000);
 	//});
-	//$('#auto').click(function(e) {
-	//	var div = $('body');
-	//	e.preventDefault();
-	//	$(this).toggleClass('active');
-	//	if ($(this).hasClass('active')) {
-	//		autoscroll = setInterval(function() {
-	//			var pos = div.scrollTop();
-	//			div.scrollTop(pos + 30);
-	//		}, 50);
-	//	} else {
-	//		clearInterval(autoscroll);
-	//	}
-	//});
+	$('#auto').click(function(e) {
+		var div = $('body'),
+			autoscroll;
+		e.preventDefault();
+		$(this).toggleClass('active');
+		if ($(this).hasClass('active')) {
+			autoscroll = setInterval(function() {
+				var pos = div.scrollTop();
+				div.scrollTop(pos + 30);
+			}, 50);
+		} else {
+			clearInterval(autoscroll);
+		}
+	});
 });
