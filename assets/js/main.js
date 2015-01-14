@@ -7,10 +7,12 @@ $(function() {
 		smoothScrollingDuration : 500,
 
 		constants: {
-			history1: '200p',
-			history2: '300p',
-			history3: '400p',
-			history4: '500p',
+			history: '200p',
+			history1: '300p',
+			history2: '400p',
+			history3: '500p',
+			history4: '600p',
+			footer: '700p',
 
 			//intro: 3500,
 			//labours1: 5200,
@@ -52,21 +54,23 @@ $(function() {
 
 		render: function(o){
 
+			console.log(o);
+
 			//if (o.curTop > 13700 && o.curTop < 13950) {
 			//	$('.counter').text(o.curTop - 13700);
 				$('.counter').text(o.curTop - 13700);
 			//}
 
-		//	if (o.curTop >= 3500) {
-		//
-		//		$('#labour').addClass('active');
-		//
-		//	} else {
-		//
-		//		$('#labour').removeClass('active');
-		//
-		//	}
-		//
+			if (o.curTop >= '300p') {
+
+				$('#history-y1').addClass('active');
+
+			} else {
+
+				$('#history-y1').removeClass('active');
+
+			}
+
 		//	if (o.curTop >= 22400) {
 		//
 		//		$('#marriage').addClass('active');
