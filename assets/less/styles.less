@@ -51,12 +51,17 @@ body #qLoverlay {
 	}
 	&__header {
 		font-family: 'Yanone Kaffeesatz Extra Light';
-		font-size: 70px;
+		font-size: 75px;
 		font-weight: 100;
 		line-height: 70px;
 		color: #303030;
 		margin-bottom: 36px;
 		width: 100%;
+
+		small {
+			font-size: 40px;
+			line-height: 30px;
+		}
 
 		&--small {
 			font-family: 'Fira Sans';
@@ -75,9 +80,37 @@ body #qLoverlay {
 .video-container {
 	background: #a53e76 url("../img/pattern-1.png");
 	width: 100%;
-	height: 700px;
+	height: 960px;
 	top: 0;
 	left: 0;
+
+	.video {
+		position: relative;
+		width: 980px;
+		height: 552px;
+		border: 10px solid #FFFFFF;
+		background: #000000;
+		z-index: 2;
+		.center-block();
+	}
+
+	.balls {
+		position: absolute;
+		left: 50%;
+		margin-top: 0;
+		z-index: 1;
+
+		&.left {
+			.size(172px, 531px);
+			top: 240px;
+			margin-left: -597px;
+		}
+		&.right {
+			.size(160px, 479px);
+			top: 215px;
+			margin-left: 450px;
+		}
+	}
 }
 
 .header-container {
@@ -116,7 +149,8 @@ body #qLoverlay {
 }
 
 .history-container {
-
+	min-height: 100%;
+	background: #742264;
 }
 
 .footer-container {
@@ -128,13 +162,122 @@ body #qLoverlay {
 }
 
 
-.video {
-	width: 980px;
-	height: 552px;
-	border: 10px solid #FFFFFF;
-	background: #000000;
-	.center-block();
+.timeline {
+//	position: fixed;
+	position: absolute;
+	left: 0;
+	height: 400px;
+	width: 150px;
+	top: 50%;
+	margin-top: -200px;
+	z-index: 10000;
+	overflow: visible;
+
+	ul {
+		list-style: none;
+		padding: 0;
+		height: 100%;
+		width: 100%;
+		margin: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1000;
+
+		li {
+			display: block;
+			height: 50px;
+			clear: both;
+			position: absolute;
+			margin-top: -15px;
+
+			&:nth-child(1) {
+				top: 0;
+			}
+			&:nth-child(2) {
+				top: 20%;
+			}
+			&:nth-child(3) {
+				top: 40%;
+			}
+			&:nth-child(4) {
+				top: 60%;
+			}
+			&:nth-child(5) {
+				top: 80%;
+			}
+
+			a {
+				color: #eb5745;
+				padding-left: 20px;
+				font-size: 13px;
+				line-height: 13px;
+
+				&.active {
+					color: #37353a;
+
+					.bullet {
+						background: #37353a;
+						border: solid 3px #37353a;
+					}
+				}
+
+				p {
+					float: left;
+					display: block;
+					width: 60px;
+					margin: 0;
+				}
+			}
+
+			.bullet {
+				width: 24px;
+				height: 24px;
+				border: solid 3px #eb5745;
+				border-radius: 20px;
+				display: inline-block;
+				background: #fff;
+				float: left;
+				margin: 0 10px 0 20px;
+
+				span {
+					width: 10px;
+					height: 10px;
+					background: #eb5745;
+					border-radius: 10px;
+					display: block;
+					margin: 4px auto 0 auto;
+				}
+			}
+		}
+	}
+
+	.time {
+		width: 5px;
+		background: #eb5745;
+		position: absolute;
+		top: 0;
+		left: 30px;
+		height: 400px;
+		z-index: 999;
+
+		.progress {
+			width: 5px;
+			background: #37353a;
+			position: absolute;
+			top: 0;
+		}
+	}
 }
+
+
+
+
+
+
+
+
+
 
 
 

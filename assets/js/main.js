@@ -6,51 +6,57 @@ $(function() {
 		smoothScrolling: true,
 		smoothScrollingDuration : 500,
 
-		//constants: {
-		//	intro: 3500,
-		//	labours1: 5200,
-		//	labours2: 5700,
-		//	labours3: 8500,
-		//	labours4: 10700,
-		//	labours5: 13400,
-		//	labours6: 16500,
-		//	labours7: 18100,
-		//	labours8: 20600,
-		//	intro2: 22400,
-		//	equalitys1: 24700,
-		//	equalitys2: 29100,
-		//	equalitys3: 31300,
-		//	equalitys4: 32800,
-		//	equalitys5: 34300,
-		//	equalitys6: 36000,
-		//	equalitys7: 37900,
-		//	equalitys8: 40900,
-		//	equalitys9: 42700,
-		//	equalitys10: 43800,
-		//	intro3: 45400,
-		//	bitcoins1: 47000,
-		//	bitcoins2: 53500,
-		//	bitcoins3: 57000,
-		//	bitcoins4: 60800,
-		//	outro: 63800,
-		//	lastfoot: 69000
-		//},
-		//
-		//edgeStrategy: 'set',
-		//
-		//easing: {
-		//	WTF: Math.random,
-		//	inverted: function(p) {
-		//		return 1-p;
-		//	}
-		//},
-		//
-		//render: function(o){
-		//
-		//	if (o.curTop > 13700 && o.curTop < 13950) {
-		//		$('.counter').text(o.curTop - 13700);
-		//	}
-		//
+		constants: {
+			history1: '200p',
+			history2: '300p',
+			history3: '400p',
+			history4: '500p',
+
+			//intro: 3500,
+			//labours1: 5200,
+			//labours2: 5700,
+			//labours3: 8500,
+			//labours4: 10700,
+			//labours5: 13400,
+			//labours6: 16500,
+			//labours7: 18100,
+			//labours8: 20600,
+			//intro2: 22400,
+			//equalitys1: 24700,
+			//equalitys2: 29100,
+			//equalitys3: 31300,
+			//equalitys4: 32800,
+			//equalitys5: 34300,
+			//equalitys6: 36000,
+			//equalitys7: 37900,
+			//equalitys8: 40900,
+			//equalitys9: 42700,
+			//equalitys10: 43800,
+			//intro3: 45400,
+			//bitcoins1: 47000,
+			//bitcoins2: 53500,
+			//bitcoins3: 57000,
+			//bitcoins4: 60800,
+			//outro: 63800,
+			//lastfoot: 69000
+		},
+
+		edgeStrategy: 'set',
+
+		easing: {
+			WTF: Math.random,
+			inverted: function(p) {
+				return 1-p;
+			}
+		},
+
+		render: function(o){
+
+			//if (o.curTop > 13700 && o.curTop < 13950) {
+			//	$('.counter').text(o.curTop - 13700);
+				$('.counter').text(o.curTop - 13700);
+			//}
+
 		//	if (o.curTop >= 3500) {
 		//
 		//		$('#labour').addClass('active');
@@ -91,12 +97,12 @@ $(function() {
 		//
 		//	}
 		//
-		//}
+		}
 	});
 
 	function skrollrUpdate(videoHeight) {
 		var screenHeight = $(window).height();
-		$(".work-container").css('height', screenHeight);
+		//$(".work-container").css('height', screenHeight);
 		s.refresh();
 	}
 

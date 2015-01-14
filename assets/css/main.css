@@ -9364,12 +9364,16 @@ body #qLoverlay {
 }
 .section__header {
   font-family: 'Yanone Kaffeesatz Extra Light';
-  font-size: 70px;
+  font-size: 75px;
   font-weight: 100;
   line-height: 70px;
   color: #303030;
   margin-bottom: 36px;
   width: 100%;
+}
+.section__header small {
+  font-size: 40px;
+  line-height: 30px;
 }
 .section__header--small {
   font-family: 'Fira Sans';
@@ -9384,9 +9388,38 @@ body #qLoverlay {
 .video-container {
   background: #a53e76 url("../img/pattern-1.png");
   width: 100%;
-  height: 700px;
+  height: 960px;
   top: 0;
   left: 0;
+}
+.video-container .video {
+  position: relative;
+  width: 980px;
+  height: 552px;
+  border: 10px solid #FFFFFF;
+  background: #000000;
+  z-index: 2;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.video-container .balls {
+  position: absolute;
+  left: 50%;
+  margin-top: 0;
+  z-index: 1;
+}
+.video-container .balls.left {
+  width: 172px;
+  height: 531px;
+  top: 240px;
+  margin-left: -597px;
+}
+.video-container .balls.right {
+  width: 160px;
+  height: 479px;
+  top: 215px;
+  margin-left: 450px;
 }
 .header-container {
   height: 150px;
@@ -9422,6 +9455,10 @@ body #qLoverlay {
   background: -o-linear-gradient(45deg, #62635d 0%, #828271 34%, #756045 73%, #282828 100%);
   background: linear-gradient(45deg, #62635d 0%, #828271 34%, #756045 73%, #282828 100%);
 }
+.history-container {
+  min-height: 100%;
+  background: #742264;
+}
 .footer-container {
   background: #353237;
   width: 100%;
@@ -9429,14 +9466,100 @@ body #qLoverlay {
   position: relative;
   z-index: 30;
 }
-.video {
-  width: 980px;
-  height: 552px;
-  border: 10px solid #FFFFFF;
-  background: #000000;
+.timeline {
+  position: absolute;
+  left: 0;
+  height: 400px;
+  width: 150px;
+  top: 50%;
+  margin-top: -200px;
+  z-index: 10000;
+  overflow: visible;
+}
+.timeline ul {
+  list-style: none;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+.timeline ul li {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  height: 50px;
+  clear: both;
+  position: absolute;
+  margin-top: -15px;
+}
+.timeline ul li:nth-child(1) {
+  top: 0;
+}
+.timeline ul li:nth-child(2) {
+  top: 20%;
+}
+.timeline ul li:nth-child(3) {
+  top: 40%;
+}
+.timeline ul li:nth-child(4) {
+  top: 60%;
+}
+.timeline ul li:nth-child(5) {
+  top: 80%;
+}
+.timeline ul li a {
+  color: #eb5745;
+  padding-left: 20px;
+  font-size: 13px;
+  line-height: 13px;
+}
+.timeline ul li a.active {
+  color: #37353a;
+}
+.timeline ul li a.active .bullet {
+  background: #37353a;
+  border: solid 3px #37353a;
+}
+.timeline ul li a p {
+  float: left;
+  display: block;
+  width: 60px;
+  margin: 0;
+}
+.timeline ul li .bullet {
+  width: 24px;
+  height: 24px;
+  border: solid 3px #eb5745;
+  border-radius: 20px;
+  display: inline-block;
+  background: #fff;
+  float: left;
+  margin: 0 10px 0 20px;
+}
+.timeline ul li .bullet span {
+  width: 10px;
+  height: 10px;
+  background: #eb5745;
+  border-radius: 10px;
+  display: block;
+  margin: 4px auto 0 auto;
+}
+.timeline .time {
+  width: 5px;
+  background: #eb5745;
+  position: absolute;
+  top: 0;
+  left: 30px;
+  height: 400px;
+  z-index: 999;
+}
+.timeline .time .progress {
+  width: 5px;
+  background: #37353a;
+  position: absolute;
+  top: 0;
 }
 body {
   font-family: 'PT Sans', sans-serif;
