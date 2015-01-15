@@ -54,7 +54,7 @@ $(function() {
 
 		render: function(o){
 
-			console.log(o);
+//			console.log(o);
 
 			//if (o.curTop > 13700 && o.curTop < 13950) {
 			//	$('.counter').text(o.curTop - 13700);
