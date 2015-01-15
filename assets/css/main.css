@@ -6878,6 +6878,10 @@ textarea.form-control {
     top: 215px;
     margin-left: 360px;
   }
+  .timeline,
+  .time {
+    height: 350px;
+  }
 }
 @media screen and (max-height: 600px) {
   .section__wrap {
@@ -6904,5 +6908,9 @@ textarea.form-control {
   .video-container .balls.right {
     top: 215px;
     margin-left: 280px;
+  }
+  .timeline,
+  .time {
+    height: 350px;
   }
 }
