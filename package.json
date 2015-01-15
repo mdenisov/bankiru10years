@@ -38,6 +38,7 @@
     ],
     "js": [
       "vendor/bower/jquery/dist/jquery.js",
+      "vendor/bower/bootstrap/dist/js/bootstrap.js",
       "vendor/bower/isotope/dist/isotope.pkgd.js",
       "vendor/bower/skrollr/src/skrollr.js",
       "vendor/bower/fancybox/source/jquery.fancybox.pack.js",
