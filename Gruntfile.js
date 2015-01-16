@@ -23,7 +23,7 @@ module.exports = function(grunt) {
         expand: true,
 //				cwd: '.',
         flatten: true,
-        src: ['assets/img/*', 'vendor/bower/fancybox/source/*.png', 'vendor/bower/fancybox/source/*.gif'],
+        src: ['assets/img/*'],
         dest: 'dist/img'
       },
       styles: {

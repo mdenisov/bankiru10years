@@ -192,4 +192,79 @@ $(function() {
 			clearInterval(autoscroll);
 		}
 	});
+
+    var Router = Backbone.Router.extend({
+        routes: {
+            "": "home",
+            "video": "showVideo",
+            "message/:id": "showMessage"
+        }
+    });
+
+    var App = {
+        Models: {},
+        Collections: {},
+        Views: {},
+
+        start: function(data) {
+            var BaseView = new this.Views.BaseView();
+
+            this.router = new Router();
+
+            this.router.on('route:home', function() {
+
+            });
+
+            this.router.on('route:showVideo', function() {
+                var modalView = new App.Views.VideoModal();
+                $('.app').html(modalView.render().el);
+            });
+
+            this.router.on('route:showMessage', function(id) {
+                var contactsView = new ContactManager.Views.Contacts({
+                    collection: contacts
+                });
+
+                $('.main-container').html(contactsView.render().$el);
+            });
+
+//            Backbone.history.start({pushState: true});
+            Backbone.history.start();
+        },
+
+        navigate: function(route) {
+            this.router.navigate(route, {
+                trigger: true,
+                replace: true
+            });
+        }
+    };
+
+    App.Views.BaseView = Backbone.View.extend({
+        el: $('body'),
+
+        events: {
+            "click .video"   : "showVideoModal"
+        },
+
+        initialize: function() {
+
+        },
+
+        showVideoModal: function() {
+
+        }
+    });
+
+    App.Views.VideoModal = Backbone.Modal.extend({
+        template: _.template($('#modal-template').html()),
+        cancelEl: '.bbm-button',
+
+        cancel: function() {
+            App.navigate('/');
+        }
+    });
+
+    App.start();
+
 });

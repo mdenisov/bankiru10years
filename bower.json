@@ -3,12 +3,13 @@
 
   "dependencies": {
     "jquery": "~2.1.0",
+    "backbone": "~1.1.2",
     "skrollr": "~0.6.29",
     "queryloader2": "~3.0.6",
     "bootstrap": "~3.2.0",
     "isotope": "~2.0.1",
     "modernizr": "latest",
-    "fancybox": "~2.1.5",
-    "social-likes": "latest"
+    "social-likes": "latest",
+    "backbone-modal": "~1.1.2"
   }
 }

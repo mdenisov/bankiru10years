@@ -33,16 +33,16 @@
   },
   "build": {
     "css" : [
-      "vendor/bower/fancybox/source/jquery.fancybox.css",
       "assets/css/**/*.css"
     ],
     "js": [
-      "vendor/bower/modernizr/modernizr.js",
       "vendor/bower/jquery/dist/jquery.js",
+      "vendor/bower/underscore/underscore.js",
+      "vendor/bower/backbone/backbone.js",
+      "vendor/bower/backbone-modal/backbone.modal.js",
       "vendor/bower/bootstrap/dist/js/bootstrap.js",
       "vendor/bower/isotope/dist/isotope.pkgd.js",
       "vendor/bower/skrollr/src/skrollr.js",
-      "vendor/bower/fancybox/source/jquery.fancybox.pack.js",
       "vendor/bower/queryloader2/queryloader2.min.js",
       "assets/js/**/*.js"
     ]
