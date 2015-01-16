@@ -6728,6 +6728,7 @@ h6 {
   margin-bottom: 36px;
 }
 .person__carousel {
+  position: relative !important;
   margin-top: 120px;
 }
 .numerals {
@@ -6760,6 +6761,7 @@ h6 {
   line-height: 25px;
 }
 .numerals__carousel {
+  position: relative !important;
   margin-top: 200px;
 }
 .form-control {
