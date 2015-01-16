@@ -37,6 +37,7 @@
       "assets/css/**/*.css"
     ],
     "js": [
+      "vendor/bower/modernizr/modernizr.js",
       "vendor/bower/jquery/dist/jquery.js",
       "vendor/bower/bootstrap/dist/js/bootstrap.js",
       "vendor/bower/isotope/dist/isotope.pkgd.js",
