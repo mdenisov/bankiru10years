@@ -25,12 +25,20 @@
 	}
 }
 
-.make-index(@index) {
-	z-index: @index * 10;
+.btn {
+	&:extend(.btn, .btn-default);
+	font-family: 'Fira Sans Light';
+	background: #f1c40f;
+	font-size: 18px;
+	line-height: 18px;
+	font-weight: 100;
+	text-transform: uppercase;
+	border-radius: 0;
+	padding: 15px 20px;
 }
 
-html, body {
-
+.make-index(@index) {
+	z-index: @index * 10;
 }
 
 body {
@@ -38,6 +46,14 @@ body {
 	color: #222222;
 	font-family: 'Fira Sans';
 }
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'PT Sans Caption', sans-serif;
+	font-weight: 700;
+	line-height: 1;
+	margin: 18px 0;
+}
+
 
 
 .chromeframe {
@@ -423,24 +439,6 @@ body {
 
 
 
-@green:					#aba000;
-@red:					#f10022;
-@blue:					#366aff;
-@gray-dark:				lighten(#000, 76.1%);
-@gray:					lighten(#000, 95.3%);
-
-
-body {
-	font-family: 'PT Sans', sans-serif;
-	font-weight: 400;
-}
-
-h1, h2, h3, h4, h5, h6 {
-	font-family: 'PT Sans Caption', sans-serif;
-	font-weight: 700;
-	line-height: 1;
-	margin: 18px 0;
-}
 
 .form-control {
 	display: block;
@@ -473,17 +471,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-.btn {
-	&:extend(.btn, .btn-default);
-	font-family: 'Fira Sans Light';
-	background: #f1c40f;
-	font-size: 18px;
-	line-height: 25px;
-	font-weight: 100;
-	text-transform: uppercase;
-	border-radius: 0;
-	padding: 12px 20px;
-}
+
 
 .btn-text {
 	&:extend(.btn, .btn-default);
