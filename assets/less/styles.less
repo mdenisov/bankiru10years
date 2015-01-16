@@ -25,7 +25,6 @@
 	}
 }
 
-
 .make-index(@index) {
 	z-index: @index * 10;
 }
@@ -443,15 +442,6 @@ h1, h2, h3, h4, h5, h6 {
 	margin: 18px 0;
 }
 
-.button {
-	&:extend(.btn, .btn-default);
-	border-radius: 2px;
-	padding: 2px 12px;
-	text-transform: uppercase;
-	font-weight: 700;
-	letter-spacing: .5px;
-}
-
 .form-control {
 	display: block;
 	width: 100%;
@@ -485,13 +475,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn {
 	&:extend(.btn, .btn-default);
-	border-radius: 2px;
-//	padding: 2px 12px;
+	font-family: 'Fira Sans Light';
+	background: #f1c40f;
+	font-size: 18px;
+	line-height: 25px;
+	font-weight: 100;
 	text-transform: uppercase;
-	font-weight: 700;
-	letter-spacing: .5px;
-	font-size: 12px;
-	line-height: 20px;
+	border-radius: 0;
+	padding: 12px 20px;
 }
 
 .btn-text {
@@ -538,39 +529,6 @@ h1, h2, h3, h4, h5, h6 {
 		}
 	}
 }
-
-.btn-group.open {
-	.dropdown-toggle, .dropdown-toggle.btn-link {
-		background: #f3f3f3;
-		@shadow: 1px 1px 0 #cccccc;
-		.box-shadow(@shadow);
-	}
-}
-
-.dropdown-menu {
-	background: #f3f3f3;
-	border-radius: 0;
-	color: @text-color;
-	margin: 0;
-	border: none;
-	min-width: 150px;
-	@shadow: 1px 1px 0 #cccccc;
-	.box-shadow(@shadow);
-
-	& > li > a {
-		color: @link-color;
-		padding: 3px 10px;
-
-		&:hover {
-			color: @link-color;
-			background: darken(#f3f3f3, 10%);
-		}
-	}
-}
-
-
-
-
 
 
 .header {

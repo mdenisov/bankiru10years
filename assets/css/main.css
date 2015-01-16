@@ -2477,14 +2477,12 @@ select[multiple].input-lg {
   }
 }
 .btn,
-.button,
 .btn,
 .btn-text,
-.button,
 .btn-text {
   display: inline-block;
   margin-bottom: 0;
-  font-weight: normal;
+  font-weight: 100;
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
@@ -2509,7 +2507,7 @@ select[multiple].input-lg {
 }
 .btn:hover,
 .btn:focus {
-  color: #ffffff;
+  color: #000000;
   text-decoration: none;
 }
 .btn:active,
@@ -2530,26 +2528,23 @@ fieldset[disabled] .btn {
   box-shadow: none;
 }
 .btn-default,
-.button,
 .btn,
 .btn-text,
-.button,
 .btn,
 .btn-text,
-.button,
 .btn-text {
-  color: #ffffff;
-  background-color: transparent;
-  border-color: #ffffff;
+  color: #000000;
+  background-color: #f1c40f;
+  border-color: #f1c40f;
 }
 .btn-default:hover,
 .btn-default:focus,
 .btn-default:active,
 .btn-default.active,
 .open > .dropdown-toggle.btn-default {
-  color: #ffffff;
-  background-color: rgba(0, 0, 0, 0);
-  border-color: #e0e0e0;
+  color: #000000;
+  background-color: #c29d0b;
+  border-color: #b8960b;
 }
 .btn-default:active,
 .btn-default.active,
@@ -2571,12 +2566,12 @@ fieldset[disabled] .btn-default:active,
 .btn-default.disabled.active,
 .btn-default[disabled].active,
 fieldset[disabled] .btn-default.active {
-  background-color: transparent;
-  border-color: #ffffff;
+  background-color: #f1c40f;
+  border-color: #f1c40f;
 }
 .btn-default .badge {
-  color: transparent;
-  background-color: #ffffff;
+  color: #f1c40f;
+  background-color: #000000;
 }
 .btn-primary {
   color: #ffffff;
@@ -3069,6 +3064,13 @@ input[type="button"].btn-block {
   font-family: 'Fira Sans';
   src: url('../fonts/firasans-regular.eot');
   src: url('../fonts/firasans-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/firasans-regular.woff') format('woff'), url('../fonts/firasans-regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Fira Sans Light';
+  src: url('../fonts/firasans-light.eot');
+  src: url('../fonts/firasans-light.eot?#iefix') format('embedded-opentype'), url('../fonts/firasans-light.woff') format('woff'), url('../fonts/firasans-light.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -6806,13 +6808,6 @@ h6 {
   line-height: 1;
   margin: 18px 0;
 }
-.button {
-  border-radius: 2px;
-  padding: 2px 12px;
-  text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: .5px;
-}
 .form-control {
   display: block;
   width: 100%;
@@ -6857,14 +6852,15 @@ textarea.form-control {
   box-shadow: none;
 }
 .btn,
-.button,
 .btn-text {
-  border-radius: 2px;
+  font-family: 'Fira Sans Light';
+  background: #f1c40f;
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: 100;
   text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: .5px;
-  font-size: 12px;
-  line-height: 20px;
+  border-radius: 0;
+  padding: 12px 20px;
 }
 .btn-text {
   background: none;
@@ -6906,30 +6902,6 @@ textarea.form-control {
 }
 .btn-social--twitter:hover {
   background-color: #209bd5;
-}
-.btn-group.open .dropdown-toggle,
-.btn-group.open .dropdown-toggle.btn-link {
-  background: #f3f3f3;
-  -webkit-box-shadow: 1px 1px 0 #cccccc;
-  box-shadow: 1px 1px 0 #cccccc;
-}
-.dropdown-menu {
-  background: #f3f3f3;
-  border-radius: 0;
-  color: #000000;
-  margin: 0;
-  border: none;
-  min-width: 150px;
-  -webkit-box-shadow: 1px 1px 0 #cccccc;
-  box-shadow: 1px 1px 0 #cccccc;
-}
-.dropdown-menu > li > a {
-  color: #003471;
-  padding: 3px 10px;
-}
-.dropdown-menu > li > a:hover {
-  color: #003471;
-  background: #dadada;
 }
 .header:before,
 .header:after {
@@ -7173,35 +7145,7 @@ textarea.form-control {
   .time {
     height: 350px;
   }
-}
-@media screen and (max-height: 600px) {
-  .section__wrap {
-    padding: 20px 0;
-  }
-  .header-container img {
-    width: 150px;
-  }
-  .video-container .video {
-    position: relative;
-    width: 640px;
-    height: 360px;
-  }
-  .video-container .balls {
-    position: absolute;
-    left: 50%;
-    margin-top: 0;
-    z-index: 1;
-  }
-  .video-container .balls.left {
-    top: 240px;
-    margin-left: -427px;
-  }
-  .video-container .balls.right {
-    top: 215px;
-    margin-left: 280px;
-  }
-  .timeline,
-  .time {
-    height: 350px;
+  .numerals {
+    margin: 40px 0;
   }
 }
