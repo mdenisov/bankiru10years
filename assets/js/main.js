@@ -1,6 +1,15 @@
 
 $(function() {
 
+	$("body").queryLoader2({
+		barColor: "#671e59",
+		backgroundColor: "#FFFFFF",
+		percentage: true,
+		overlayId: 'qLoverlay',
+		barHeight: 1,
+		completeAnimation: "fade"
+	});
+
 	var s = skrollr.init({
 
 		smoothScrolling: true,
@@ -138,15 +147,6 @@ $(function() {
 		//$(".history").css('height', screenHeight - 80);
 		//$(".history .wrapper").css('height', screenHeight - 80);
 	}
-
-	$("body").queryLoader2({
-		barColor: "#671e59",
-		backgroundColor: "#FFFFFF",
-		percentage: true,
-		overlayId: 'qLoverlay',
-		barHeight: 1,
-		completeAnimation: "fade"
-	});
 
 	videoResize();
 
