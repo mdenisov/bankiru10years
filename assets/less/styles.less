@@ -1,4 +1,31 @@
 
+.carousel-control {
+	background: none;
+
+	&.right {
+		background: url("../img/arrow-right.png") no-repeat 90% 50%;
+	}
+	&.left {
+		background: url("../img/arrow-left.png") no-repeat 10% 50%;
+	}
+}
+.carousel-indicators {
+	bottom: -80px;
+
+	li {
+		border: 1px solid #f1c40f;
+		background: #f1c40f;
+		margin: 0 8px;
+		.square(12px);
+	}
+	.active {
+		border: 1px solid #000000;
+		background: #000000;
+		margin: 0 8px;
+	}
+}
+
+
 .make-index(@index) {
 	z-index: @index * 10;
 }
@@ -310,9 +337,82 @@ body {
 	}
 }
 
+.person {
+	width: 1024px;
+	display: inline-block;
 
+	&__photo {
+		width: 292px;
+		height: 363px;
+		border: 10px solid #FFFFFF;
+		position: relative;
+		overflow: hidden;
+		margin-bottom: 20px;
+		background: #FFFFFF;
+		float: left;
+		.box-shadow(8px 8px 0 rgba(0,0,0,.1));
 
+		img {
+			width: auto;
+			height: 100%;
+		}
+	}
+	&__description {
+		text-align: left;
+		margin-left: 342px;
+	}
+	&__name {
+		font-size: 30px;
+		font-weight: 500;
+		line-height: 30px;
+		margin-bottom: 8px;
+	}
+	&__subname {
+		font-style: italic;
+		margin-bottom: 18px;
+	}
+	&__text {
+		font-size: 20px;
+		line-height: 25px;
+		margin-bottom: 36px;
+	}
 
+	&__carousel {
+		margin-top: 120px;
+	}
+}
+
+.numerals {
+	list-style: none;
+	margin: 110px 0;
+	padding: 0;
+
+	&__item {
+		width: 360px;
+		display: inline-block;
+		padding: 0 45px;
+		vertical-align: top;
+	}
+	&__icon {
+		display: inline-block;
+		background: #f39c12;
+		border-radius: 50%;
+		margin-bottom: 20px;
+		.square(208px);
+		.box-shadow(5px 5px 0 rgba(0,0,0,.1));
+	}
+	&__digit{
+		font-size: 45px;
+		line-height: 45px;
+		margin-bottom: 10px;
+	}
+	&__description {
+		line-height: 25px;
+	}
+	&__carousel {
+		margin-top: 200px;
+	}
+}
 
 
 

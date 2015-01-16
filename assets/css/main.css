@@ -6422,6 +6422,30 @@ body {
   -o-animation-duration: 0.75s;
   animation-duration: 0.75s;
 }
+.carousel-control {
+  background: none;
+}
+.carousel-control.right {
+  background: url("../img/arrow-right.png") no-repeat 90% 50%;
+}
+.carousel-control.left {
+  background: url("../img/arrow-left.png") no-repeat 10% 50%;
+}
+.carousel-indicators {
+  bottom: -80px;
+}
+.carousel-indicators li {
+  border: 1px solid #f1c40f;
+  background: #f1c40f;
+  margin: 0 8px;
+  width: 12px;
+  height: 12px;
+}
+.carousel-indicators .active {
+  border: 1px solid #000000;
+  background: #000000;
+  margin: 0 8px;
+}
 body {
   background: #fff;
   color: #222222;
@@ -6692,6 +6716,80 @@ body {
   background: #ffffff;
   position: absolute;
   top: 0;
+}
+.person {
+  width: 1024px;
+  display: inline-block;
+}
+.person__photo {
+  width: 292px;
+  height: 363px;
+  border: 10px solid #FFFFFF;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+  background: #FFFFFF;
+  float: left;
+  -webkit-box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.1);
+}
+.person__photo img {
+  width: auto;
+  height: 100%;
+}
+.person__description {
+  text-align: left;
+  margin-left: 342px;
+}
+.person__name {
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 30px;
+  margin-bottom: 8px;
+}
+.person__subname {
+  font-style: italic;
+  margin-bottom: 18px;
+}
+.person__text {
+  font-size: 20px;
+  line-height: 25px;
+  margin-bottom: 36px;
+}
+.person__carousel {
+  margin-top: 120px;
+}
+.numerals {
+  list-style: none;
+  margin: 110px 0;
+  padding: 0;
+}
+.numerals__item {
+  width: 360px;
+  display: inline-block;
+  padding: 0 45px;
+  vertical-align: top;
+}
+.numerals__icon {
+  display: inline-block;
+  background: #f39c12;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  width: 208px;
+  height: 208px;
+  -webkit-box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.1);
+}
+.numerals__digit {
+  font-size: 45px;
+  line-height: 45px;
+  margin-bottom: 10px;
+}
+.numerals__description {
+  line-height: 25px;
+}
+.numerals__carousel {
+  margin-top: 200px;
 }
 body {
   font-family: 'PT Sans', sans-serif;
