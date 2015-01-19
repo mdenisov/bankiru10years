@@ -6996,7 +6996,6 @@ body {
 }
 .btn,
 .btn-text {
-  font-family: 'Fira Sans Light';
   background: #f1c40f;
   font-size: 18px;
   line-height: 18px;
@@ -7004,6 +7003,7 @@ body {
   text-transform: uppercase;
   border-radius: 0;
   padding: 15px 20px;
+  font-family: 'Fira Sans';
 }
 body {
   background: #fff;

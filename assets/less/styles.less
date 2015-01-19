@@ -25,18 +25,6 @@
 	}
 }
 
-.btn {
-	&:extend(.btn, .btn-default);
-	font-family: 'Fira Sans Light';
-	background: #f1c40f;
-	font-size: 18px;
-	line-height: 18px;
-	font-weight: 100;
-	text-transform: uppercase;
-	border-radius: 0;
-	padding: 15px 20px;
-}
-
 .text-bold() {
 	font-family: 'Fira Sans Bold';
 }
@@ -53,6 +41,19 @@
 .make-index(@index) {
 	z-index: @index * 10;
 }
+
+.btn {
+	&:extend(.btn, .btn-default);
+	background: #f1c40f;
+	font-size: 18px;
+	line-height: 18px;
+	font-weight: 100;
+	text-transform: uppercase;
+	border-radius: 0;
+	padding: 15px 20px;
+	.text-normal();
+}
+
 
 body {
 	background: #fff;
