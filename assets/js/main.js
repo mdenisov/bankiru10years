@@ -176,6 +176,10 @@ $(function() {
 		}
 	});
 
+	$('.carousel').carousel({
+		interval: false
+	});
+
     var Router = Backbone.Router.extend({
         routes: {
             "": "home",
