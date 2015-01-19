@@ -37,6 +37,19 @@
 	padding: 15px 20px;
 }
 
+.text-bold() {
+	font-family: 'Fira Sans Bold';
+}
+.text-italic() {
+	font-family: 'Fira Sans Italic';
+}
+.text-bold-italic() {
+	font-family: 'Fira Sans Bold Italic';
+}
+.text-normal() {
+	font-family: 'Fira Sans';
+}
+
 .make-index(@index) {
 	z-index: @index * 10;
 }
@@ -44,7 +57,7 @@
 body {
 	background: #fff;
 	color: #222222;
-	font-family: 'Fira Sans';
+	.text-normal();
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -116,11 +129,11 @@ h1, h2, h3, h4, h5, h6 {
 		}
 
 		&--small {
-			font-family: 'Fira Sans';
 			font-size: 36px;
 			font-weight: 500;
 			line-height: 40px;
 			margin-bottom: 18px;
+			.text-normal();
 
 			small {
 				font-size: 20px;
@@ -415,8 +428,8 @@ h1, h2, h3, h4, h5, h6 {
 		margin-bottom: 8px;
 	}
 	&__subname {
-		font-style: italic;
 		margin-bottom: 18px;
+		.text-italic();
 	}
 	&__text {
 		font-size: 20px;
@@ -483,14 +496,13 @@ h1, h2, h3, h4, h5, h6 {
 	}
 	&__name {
 		line-height: 25px;
-		font-weight: 700;
-//		margin-bottom: 10px;
+		.text-bold();
 	}
 	&__subname {
 		font-size: 14px;
 		line-height: 25px;
-		font-style: italic;
 		margin-bottom: 14px;
+		.text-italic();
 	}
 	&__meta {
 		margin-bottom: 14px;
@@ -513,6 +525,38 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
+.forum {
+	list-style: none;
+	margin: 110px 0 60px 0;
+	.clearfix();
+
+	&__item {
+		width: 350px;
+		display: inline-block;
+		margin: 15px;
+		padding: 24px;
+		vertical-align: top;
+		background: #ffffff;
+		color: #222222;
+		text-align: left;
+	}
+	&__photo {
+		float: left;
+		display: inline-block;
+		margin-bottom: 14px;
+		.square(100px);
+	}
+	&__name {
+		margin-left: 124px;
+		line-height: 25px;
+		margin-bottom: 10px;
+		.text-bold();
+		.clearfix();
+	}
+	&__text {
+		line-height: 25px;
+	}
+}
 
 
 

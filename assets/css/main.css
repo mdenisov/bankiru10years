@@ -3023,8 +3023,8 @@ input[type="button"].btn-block {
 }
 @font-face {
   font-family: 'Fira Sans Italic';
-  src: url('../fonts/firasans-regularitalic.eot');
-  src: url('../fonts/firasans-regularitalic.eot?#iefix') format('embedded-opentype'), url('../fonts/firasans-regularitalic.woff') format('woff'), url('../fonts/firasans-regularitalic.ttf') format('truetype');
+  src: url('../fonts/firasans-italic.eot');
+  src: url('../fonts/firasans-italic.eot?#iefix') format('embedded-opentype'), url('../fonts/firasans-italic.woff') format('woff'), url('../fonts/firasans-italic.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -7073,11 +7073,11 @@ h6 {
   line-height: 30px;
 }
 .section__header--small {
-  font-family: 'Fira Sans';
   font-size: 36px;
   font-weight: 500;
   line-height: 40px;
   margin-bottom: 18px;
+  font-family: 'Fira Sans';
 }
 .section__header--small small {
   font-size: 20px;
@@ -7346,8 +7346,8 @@ h6 {
   margin-bottom: 8px;
 }
 .person__subname {
-  font-style: italic;
   margin-bottom: 18px;
+  font-family: 'Fira Sans Italic';
 }
 .person__text {
   font-size: 20px;
@@ -7411,13 +7411,13 @@ h6 {
 }
 .employee__name {
   line-height: 25px;
-  font-weight: 700;
+  font-family: 'Fira Sans Bold';
 }
 .employee__subname {
   font-size: 14px;
   line-height: 25px;
-  font-style: italic;
   margin-bottom: 14px;
+  font-family: 'Fira Sans Italic';
 }
 .employee__meta {
   margin-bottom: 14px;
@@ -7436,6 +7436,68 @@ h6 {
 }
 .employee__carousel .carousel-indicators {
   bottom: 20px;
+}
+.forum {
+  list-style: none;
+  margin: 110px 0 60px 0;
+}
+.forum:before,
+.forum:after {
+  content: " ";
+  display: table;
+}
+.forum:after {
+  clear: both;
+}
+.forum:before,
+.forum:after {
+  content: " ";
+  display: table;
+}
+.forum:after {
+  clear: both;
+}
+.forum__item {
+  width: 350px;
+  display: inline-block;
+  margin: 15px;
+  padding: 24px;
+  vertical-align: top;
+  background: #ffffff;
+  color: #222222;
+  text-align: left;
+}
+.forum__photo {
+  float: left;
+  display: inline-block;
+  margin-bottom: 14px;
+  width: 100px;
+  height: 100px;
+}
+.forum__name {
+  margin-left: 124px;
+  line-height: 25px;
+  margin-bottom: 10px;
+  font-family: 'Fira Sans Bold';
+}
+.forum__name:before,
+.forum__name:after {
+  content: " ";
+  display: table;
+}
+.forum__name:after {
+  clear: both;
+}
+.forum__name:before,
+.forum__name:after {
+  content: " ";
+  display: table;
+}
+.forum__name:after {
+  clear: both;
+}
+.forum__text {
+  line-height: 25px;
 }
 .form-control {
   display: block;
