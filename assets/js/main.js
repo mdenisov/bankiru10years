@@ -176,8 +176,15 @@ $(function() {
 		}
 	});
 
+	// Carousel
 	$('.carousel').carousel({
 		interval: false
+	});
+
+	// Masonry
+	$('.forum').isotope({
+		itemSelector: '.forum__item',
+		layoutMode: 'masonry'
 	});
 
     var Router = Backbone.Router.extend({
