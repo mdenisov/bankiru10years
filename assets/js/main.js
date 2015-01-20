@@ -187,6 +187,7 @@ $(function() {
 		layoutMode: 'masonry'
 	});
 
+	// Main Application
     var Router = Backbone.Router.extend({
         routes: {
             "": "home",

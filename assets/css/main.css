@@ -7320,8 +7320,25 @@ h6 {
   top: 0;
 }
 .person {
-  width: 1024px;
-  display: inline-block;
+  width: 100%;
+  max-width: 1024px;
+  display: block;
+}
+.person:before,
+.person:after {
+  content: " ";
+  display: table;
+}
+.person:after {
+  clear: both;
+}
+.person:before,
+.person:after {
+  content: " ";
+  display: table;
+}
+.person:after {
+  clear: both;
 }
 .person__photo {
   width: 292px;
@@ -7367,11 +7384,29 @@ h6 {
   margin: 110px 0;
   padding: 0;
 }
+.numerals:before,
+.numerals:after {
+  content: " ";
+  display: table;
+}
+.numerals:after {
+  clear: both;
+}
+.numerals:before,
+.numerals:after {
+  content: " ";
+  display: table;
+}
+.numerals:after {
+  clear: both;
+}
 .numerals__item {
-  width: 360px;
-  display: inline-block;
+  width: 380px;
+  display: block;
   padding: 0 45px;
   vertical-align: top;
+  overflow: hidden;
+  float: left;
 }
 .numerals__icon {
   display: inline-block;
@@ -7400,18 +7435,41 @@ h6 {
   margin: 110px 0;
   padding: 0;
 }
+.employee:before,
+.employee:after {
+  content: " ";
+  display: table;
+}
+.employee:after {
+  clear: both;
+}
+.employee:before,
+.employee:after {
+  content: " ";
+  display: table;
+}
+.employee:after {
+  clear: both;
+}
 .employee__item {
   width: 255px;
-  display: inline-block;
+  display: block;
   margin: 0 15px;
   padding: 20px 0;
   vertical-align: top;
   background: #ffffff;
   background: rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+  float: left;
 }
 .employee__photo {
-  display: inline-block;
+  display: block;
+  width: 100%;
   margin-bottom: 14px;
+}
+.employee__photo img {
+  width: 100%;
+  height: auto;
 }
 .employee__name {
   line-height: 25px;
@@ -7464,13 +7522,15 @@ h6 {
 }
 .forum__item {
   width: 350px;
-  display: inline-block;
+  display: block;
   margin: 15px;
   padding: 24px;
   vertical-align: top;
   background: #ffffff;
   color: #222222;
   text-align: left;
+  float: left;
+  overflow: hidden;
 }
 .forum__photo {
   float: left;
@@ -7503,6 +7563,12 @@ h6 {
 }
 .forum__text {
   line-height: 25px;
+  max-height: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 10;
+  -webkit-box-orient: vertical;
 }
 .form-control {
   display: block;
@@ -7838,9 +7904,27 @@ textarea.form-control {
   .section__container {
     width: 960px;
   }
+  .numerals__item {
+    width: 320px;
+  }
+  .employee__item {
+    width: 210px;
+  }
+  .forum__item {
+    width: 290px;
+  }
 }
 @media (min-width: 1200px) {
   .section__container {
     width: 1140px;
+  }
+  .numerals__item {
+    width: 380px;
+  }
+  .employee__item {
+    width: 255px;
+  }
+  .forum__item {
+    width: 350px;
   }
 }

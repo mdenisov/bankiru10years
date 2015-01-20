@@ -403,8 +403,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .person {
-	width: 1024px;
-	display: inline-block;
+	width: 100%;
+	max-width: 1024px;
+	display: block;
+	.clearfix();
 
 	&__photo {
 		width: 292px;
@@ -452,12 +454,15 @@ h1, h2, h3, h4, h5, h6 {
 	list-style: none;
 	margin: 110px 0;
 	padding: 0;
+	.clearfix();
 
 	&__item {
-		width: 360px;
-		display: inline-block;
+		width: 380px;
+		display: block;
 		padding: 0 45px;
 		vertical-align: top;
+		overflow: hidden;
+		float: left;
 	}
 	&__icon {
 		display: inline-block;
@@ -485,19 +490,28 @@ h1, h2, h3, h4, h5, h6 {
 	list-style: none;
 	margin: 110px 0;
 	padding: 0;
+	.clearfix();
 
 	&__item {
 		width: 255px;
-		display: inline-block;
+		display: block;
 		margin: 0 15px;
 		padding: 20px 0;
 		vertical-align: top;
 		background: #ffffff;
 		background: rgba(255,255,255,.5);
+		overflow: hidden;
+		float: left;
 	}
 	&__photo {
-		display: inline-block;
+		display: block;
+		width: 100%;
 		margin-bottom: 14px;
+
+		img {
+			width: 100%;
+			height: auto;
+		}
 	}
 	&__name {
 		line-height: 25px;
@@ -538,13 +552,15 @@ h1, h2, h3, h4, h5, h6 {
 
 	&__item {
 		width: 350px;
-		display: inline-block;
+		display: block;
 		margin: 15px;
 		padding: 24px;
 		vertical-align: top;
 		background: #ffffff;
 		color: #222222;
 		text-align: left;
+		float: left;
+		overflow: hidden;
 	}
 	&__photo {
 		float: left;
@@ -561,6 +577,12 @@ h1, h2, h3, h4, h5, h6 {
 	}
 	&__text {
 		line-height: 25px;
+		max-height: 250px;
+		overflow : hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 10;
+		-webkit-box-orient: vertical;
 	}
 }
 
