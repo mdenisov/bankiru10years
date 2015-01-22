@@ -1,7 +1,10 @@
 
 $(function() {
 
-	$("body").queryLoader2({
+	var $body = $("body"),
+		$document = $("document");
+
+	$body.queryLoader2({
 		barColor: "#671e59",
 		backgroundColor: "#FFFFFF",
 		percentage: true,
@@ -185,6 +188,10 @@ $(function() {
 	$('.forum').isotope({
 		itemSelector: '.forum__item',
 		layoutMode: 'masonry'
+	});
+
+	$('.menu__trigger').on('click', function(event) {
+		$body.toggleClass('menu--open');
 	});
 
 	// Main Application
