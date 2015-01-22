@@ -44,6 +44,7 @@
       "vendor/bower/isotope/dist/isotope.pkgd.js",
       "vendor/bower/skrollr/src/skrollr.js",
       "vendor/bower/queryloader2/queryloader2.min.js",
+      "vendor/bower/jquery.scrollTo/jquery.scrollTo.js",
       "assets/js/**/*.js"
     ]
   }

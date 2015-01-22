@@ -28,7 +28,7 @@
 
     <div id="skrollr-body"></div>
 
-    <div class="section section--fixed section--invert section--center video-container">
+    <div id="video-container" class="section section--fixed section--invert section--center video-container">
 
         <div class="header-container">
             <img src="assets/img/logo.png" alt=""/>
@@ -52,7 +52,7 @@
 
     </div>
 
-    <div class="section section--center congratulations-container" data-_congratulations="top:100%;" data-100p="top:0%;">
+    <div id="congratulations-container" class="section section--center congratulations-container" data-_congratulations="top:100%;" data-100p="top:0%;">
 
         <div class="section__wrap">
             <header class="section__header" data-0="margin-top: -20px; opacity: 0;" data-25p="margin-top: 0px; opacity: 1;">Поздравления от первых лиц</header>
@@ -115,7 +115,7 @@
 
     </div>
 
-    <div class="section section--invert section--center numerals-container" data-0="top:100%;" data-_numerals="top:100%;" data-100p="top:85%;" data-200p="top:0%;">
+    <div id="numerals-container" class="section section--invert section--center numerals-container" data-0="top:100%;" data-_numerals="top:100%;" data-100p="top:85%;" data-200p="top:0%;">
 
         <div class="section__wrap">
             <header class="section__header" data-85p="margin-top: -20px; opacity: 0;" data-110p="margin-top: 0px; opacity: 1;">
@@ -189,7 +189,7 @@
 
     </div>
 
-    <div class="section section--invert section--center history-container" data-0="top:100%;" data-_history="top:100%;" data-_history-100p="top:0px;" data-_footer="top: 0px;" data-_footer-275="top: -275px;">
+    <div id="history-container" class="section section--invert section--center history-container" data-0="top:100%;" data-_history="top:100%;" data-_history-100p="top:0px;" data-_footer="top: 0px;" data-_footer-275="top: -275px;">
 
         <div class="timeline" data-_history-20p="left:-150px; opacity: 0;" data-_history-100p="left:0px; opacity: 1;">
             <ul>
@@ -252,7 +252,7 @@
 
     </div>
 
-    <div class="section section--center essays-container" data-_essays="top:100%;" data-_essays-100p="top:0%;">
+    <div id="essays-container" class="section section--center essays-container" data-_essays="top:100%;" data-_essays-100p="top:0%;">
 
         <div class="section__wrap">
             <header class="section__header" data-0="margin-top: -20px; opacity: 0;" data-25p="margin-top: 0px; opacity: 1;">Эссе сотрудников</header>
@@ -373,7 +373,7 @@
 
     </div>
 
-    <div class="section section--invert section--center forum-container" data-_forum="top:100%;" data-_forum-100p="top:0%;">
+    <div id="forum-container" class="section section--invert section--center forum-container" data-_forum="top:100%;" data-_forum-100p="top:0%;">
 
         <div class="section__wrap">
             <header class="section__header" data-0="margin-top: -20px; opacity: 0;" data-25p="margin-top: 0px; opacity: 1;">Поздравления форума</header>
@@ -422,23 +422,24 @@
 
     <div class="menu">
         <span class="menu__trigger"><span>Menu</span></span>
+        <span class="menu__trigger menu__trigger--invert" data-0="opacity:0;" data-_numerals-99p="opacity:0;" data-_numerals-100p="opacity:1;" data-_essays-99p="opacity:1;" data-_essays-100p="opacity:0;" data-_forum-99p="opacity:0;" data-_forum-100p="opacity:1;"><span>Menu</span></span>
 
         <nav class="menu__container">
             <ul class="menu__list">
                 <li class="menu__item">
-                    <a href="">Поздравление от первых лиц</a>
+                    <a href="#congratulations-container">Поздравление от первых лиц</a>
                 </li>
                 <li class="menu__item">
-                    <a href="">Цифры десятилетия</a>
+                    <a href="#numerals-container">Цифры десятилетия</a>
                 </li>
                 <li class="menu__item">
-                    <a href="">История Банки.ру</a>
+                    <a href="#history-container">История Банки.ру</a>
                 </li>
                 <li class="menu__item">
-                    <a href="">Эссе сотрудников</a>
+                    <a href="#essays-container">Эссе сотрудников</a>
                 </li>
                 <li class="menu__item">
-                    <a href="">Позравление форумчан</a>
+                    <a href="#footer-container">Позравление форумчан</a>
                 </li>
             </ul>
         </nav>

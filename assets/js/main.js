@@ -1,8 +1,7 @@
 
 $(function() {
 
-	var $body = $("body"),
-		$document = $("document");
+	var $body = $("body");
 
 	$body.queryLoader2({
 		barColor: "#671e59",
@@ -190,8 +189,20 @@ $(function() {
 		layoutMode: 'masonry'
 	});
 
-	$('.menu__trigger').on('click', function(event) {
+	// Main menu
+	$body.on('click', '.menu__trigger', function(event) {
 		$body.toggleClass('menu--open');
+	});
+	$body.on('click', '.menu__item', function(event) {
+		event.preventDefault();
+
+		var $item = $(this),
+			hash = $item.children().attr('href');
+
+		$body.toggleClass('menu--open');
+		$.scrollTo( hash );
+
+		return false;
 	});
 
 	// Main Application

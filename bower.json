@@ -10,6 +10,7 @@
     "isotope": "~2.0.1",
     "modernizr": "latest",
     "social-likes": "latest",
-    "backbone-modal": "~1.1.2"
+    "backbone-modal": "~1.1.2",
+    "jquery.scrollTo": "~1.4.14"
   }
 }

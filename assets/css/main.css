@@ -7065,7 +7065,7 @@ h6 {
   width: 32px;
   height: 32px;
   cursor: pointer;
-  z-index: 666998;
+  z-index: 666998 !important;
 }
 .menu__trigger span {
   position: absolute;
@@ -7108,6 +7108,13 @@ h6 {
   -ms-transform: translateY(-250%);
   -o-transform: translateY(-250%);
   transform: translateY(-250%);
+}
+.menu__trigger--invert span {
+  background-color: #fff;
+}
+.menu__trigger--invert span:before,
+.menu__trigger--invert span:after {
+  background: #fff;
 }
 .menu__container {
   background: #a53e76;
