@@ -95,7 +95,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .menu {
 	&--open & {
-		.menu__trigger {
+		&__trigger {
 			span {
 				background-color: transparent;
 
@@ -109,9 +109,14 @@ h1, h2, h3, h4, h5, h6 {
 				}
 			}
 		}
-		.menu__container {
+		&__list {
+			opacity: 1;
+			transform: rotateX(0deg);
+		}
+		&__container {
 			visibility: visible;
 			opacity: 1;
+			transition: opacity 0.5s;
 		}
 	}
 	&__trigger {
@@ -133,7 +138,7 @@ h1, h2, h3, h4, h5, h6 {
 			height: 4px;
 			margin-top: -2px;
 			background-color: #000;
-			font-size: 0px;
+			font-size: 0;
 			.user-select(none);
 			.transition(background-color 0.3s);
 
@@ -178,7 +183,7 @@ h1, h2, h3, h4, h5, h6 {
 		text-align: center;
 		visibility: hidden;
 		opacity: 0;
-		transition: transform 0.2s, opacity 0.2s, visibility 0s;
+		transition: opacity 0.5s, visibility 0s 0.5s;
 
 		&:before, &:after {
 			display: inline-block;
@@ -195,6 +200,9 @@ h1, h2, h3, h4, h5, h6 {
 		margin: 2%;
 		padding: 0;
 		width: 50%;
+		opacity: 0.4;
+		transform: translateY(-25%) rotateX(35deg);
+		transition: transform 0.5s, opacity 0.5s;
 	}
 	&__item {
 		margin: 0;

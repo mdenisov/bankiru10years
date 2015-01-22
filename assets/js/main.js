@@ -153,10 +153,12 @@ $(function() {
 		event.preventDefault();
 
 		var $item = $(this),
-			hash = $item.children().attr('href');
+			delta = $item.children().data('goto');
 
 		$body.toggleClass('menu--open');
-		$.scrollTo( hash );
+		//$.scrollTo( hash );
+
+		$body.scrollTop($window.height() * delta);
 
 		return false;
 	});
