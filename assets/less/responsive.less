@@ -46,6 +46,20 @@
 }
 
 @media (min-width: 992px) {
+
+}
+
+@media (min-width: 1200px) {
+
+}
+
+
+@media (max-width: @screen-xs-max) {
+
+}
+
+
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
 	.section {
 		&__container {
 			width: 960px;
@@ -68,7 +82,31 @@
 	}
 }
 
-@media (min-width: 1200px) {
+
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+	.section {
+		&__container {
+			width: 960px;
+		}
+	}
+	.numerals {
+		&__item {
+			width: 320px;
+		}
+	}
+	.employee {
+		&__item {
+			width: 210px;
+		}
+	}
+	.forum {
+		&__item {
+			width: 290px;
+		}
+	}
+}
+
+@media (min-width: @screen-lg-min) {
 	.section {
 		&__container {
 			width: 1140px;

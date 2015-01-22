@@ -120,7 +120,7 @@ module.exports = function(grunt) {
         tasks: ['dist-js']
       },
       less: {
-        files: 'assets/less/*.less',
+        files: 'assets/less/**/*.less',
         tasks: ['dist-css']
       },
       all: {
