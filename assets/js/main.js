@@ -229,7 +229,7 @@ $(function() {
 
     App.Views.VideoModal = Backbone.Modal.extend({
         template: _.template($('#modal-template').html()),
-        cancelEl: '.bbm-button',
+        cancelEl: '.bbm-modal__close',
 
         cancel: function() {
             App.navigate('/');
