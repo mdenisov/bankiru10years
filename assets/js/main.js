@@ -1,7 +1,8 @@
 
 $(function() {
 
-	var $body = $("body");
+	var $window = $(window),
+		$body = $("body");
 
 	$body.queryLoader2({
 		barColor: "#671e59",
@@ -47,59 +48,20 @@ $(function() {
 		},
 
 		render: function(o){
+			for (var i=1; i<=11; i++) {
+				var delta = i + 2;
 
-//			console.log(o);
-
-			//if (o.curTop > 13700 && o.curTop < 13950) {
-			//	$('.counter').text(o.curTop - 13700);
-				$('.counter').text(o.curTop - 13700);
-			//}
-
-			if (o.curTop >= '300p') {
-
-				$('#history-y1').addClass('active');
-
-			} else {
-
-				$('#history-y1').removeClass('active');
-
+				if (o.curTop >= $window.height() * delta) {
+					$('#history-y' + i).addClass('active');
+				} else {
+					$('#history-y' + i).removeClass('active');
+				}
 			}
-
-		//	if (o.curTop >= 22400) {
-		//
-		//		$('#marriage').addClass('active');
-		//
-		//	} else {
-		//
-		//		$('#marriage').removeClass('active');
-		//
-		//	}
-		//
-		//	if (o.curTop >= 45400) {
-		//
-		//		$('#bitcoins-industry').addClass('active');
-		//
-		//	} else {
-		//
-		//		$('#bitcoins-industry').removeClass('active');
-		//
-		//	}
-		//
-		//	if (o.curTop >= 63800) {
-		//
-		//		$('#more').addClass('active');
-		//
-		//	} else {
-		//
-		//		$('#more').removeClass('active');
-		//
-		//	}
-		//
 		}
 	});
 
 	function skrollrUpdate(videoHeight) {
-		var screenHeight = $(window).height();
+		var screenHeight = $window.height();
 		//$(".work-container").css('height', screenHeight);
 		s.refresh();
 	}
@@ -107,8 +69,8 @@ $(function() {
 	function videoResize() {
 		var videoWrapper = $('.videoWrapper');
 		var headerHeight = $('.header-container').height();
-		var screenHeight = $(window).height();
-		var screenWidth = $(window).width();
+		var screenHeight = $window.height();
+		var screenWidth = $window.width();
 		//if (screenWidth / screenHeight > 16 / 9) {
 		//	videoWrapper.css('height', screenWidth * 9 / 16);
 		//	videoWrapper.css('width', screenWidth);
@@ -139,39 +101,33 @@ $(function() {
 		videoResize();
 	});
 
-	//$("#labour").click(function(e) {
-	//	e.preventDefault();
-	//	$('body,html').stop().animate({
-	//		scrollTop: 3500
-	//	}, 2000);
-	//});
-	//$("#marriage").click(function(e) {
-	//	e.preventDefault();
-	//	$('body,html').stop().animate({
-	//		scrollTop: 22600
-	//	}, 2000);
-	//});
-	//$("#bitcoins-industry").click(function(e) {
-	//	e.preventDefault();
-	//	$('body,html').stop().animate({
-	//		scrollTop: 45600
-	//	}, 2000);
-	//});
-	//$("#more").click(function(e) {
-	//	e.preventDefault();
-	//	$('body,html').stop().animate({
-	//		scrollTop: 64000
-	//	}, 2000);
-	//});
+	// Slide navigation
+	$body.on('click', '.timeline__link:not("#auto")', function(event) {
+		event.preventDefault();
+
+		var $item = $(this),
+			hash = $item.attr('id'),
+			delta = parseInt(hash.replace('history-y', ''), 10) + 2;
+
+		$body.scrollTop($window.height() * delta);
+
+		return false;
+	});
+
 	$('#auto').click(function(e) {
-		var div = $('body'),
-			autoscroll;
+		var autoscroll;
+
 		e.preventDefault();
 		$(this).toggleClass('active');
+
 		if ($(this).hasClass('active')) {
 			autoscroll = setInterval(function() {
-				var pos = div.scrollTop();
-				div.scrollTop(pos + 30);
+				var pos = $body.scrollTop();
+				$body.scrollTop(pos + 30);
+
+				if (pos === $body.scrollTop()) {
+					clearInterval(autoscroll);
+				}
 			}, 50);
 		} else {
 			clearInterval(autoscroll);
