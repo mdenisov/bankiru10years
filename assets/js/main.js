@@ -163,12 +163,13 @@ $(function() {
 		return false;
 	});
 
+
 	// Main Application
     var Router = Backbone.Router.extend({
         routes: {
             "": "home",
             "video": "showVideo",
-            "message/:id": "showMessage"
+            "essays/:id": "showEssays"
         }
     });
 
@@ -181,25 +182,25 @@ $(function() {
             var BaseView = new this.Views.BaseView();
 
             this.router = new Router();
-
             this.router.on('route:home', function() {
 
             });
 
             this.router.on('route:showVideo', function() {
-                var modalView = new App.Views.VideoModal();
-                $('.app').html(modalView.render().el);
+				modalView.setContent($('#video-modal-template').html());
+				modalView.open();
             });
 
-            this.router.on('route:showMessage', function(id) {
-                var contactsView = new ContactManager.Views.Contacts({
-                    collection: contacts
-                });
-
-                $('.main-container').html(contactsView.render().$el);
+            this.router.on('route:showEssays', function(id) {
+				modalView.setContent($('#essays-modal-template').html());
+				modalView.open();
             });
 
-//            Backbone.history.start({pushState: true});
+			var modalView = new App.Views.ModalView();
+
+			$('.app').html(modalView.render().el);
+
+            //Backbone.history.start({pushState: true});
             Backbone.history.start();
         },
 
@@ -227,14 +228,44 @@ $(function() {
         }
     });
 
-    App.Views.VideoModal = Backbone.Modal.extend({
-        template: _.template($('#modal-template').html()),
-        cancelEl: '.bbm-modal__close',
+	App.Views.ModalView = Backbone.View.extend({
+		template: _.template($('#modal-template').html()),
 
-        cancel: function() {
-            App.navigate('/');
-        }
-    });
+		events: {
+			"click .modal__close"   	: "close",
+			"click .modal__wrapper"   	: "close"
+		},
+
+		initialize: function() {
+			this.close();
+		},
+
+		render: function() {
+			this.$el.html(this.template(this.options));
+			return this;
+		},
+
+		setContent: function(content) {
+			this.$('.modal__container').html(content);
+			return this;
+		},
+
+		open: function() {
+			this.$el.removeClass('hidden');
+			this.$('.modal').addClass('modal--open');
+		},
+
+		close: function() {
+			this.$el.addClass('hidden');
+			this.$('.modal').removeClass('modal--open');
+
+			this.afterClose();
+		},
+
+		afterClose: function() {
+			App.navigate('/');
+		}
+	});
 
     App.start();
 

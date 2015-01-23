@@ -665,7 +665,10 @@ h1, h2, h3, h4, h5, h6 {
 	&__photo {
 		display: block;
 		width: 100%;
+		margin: 0 auto;
 		margin-bottom: 14px;
+		-webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+		clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 
 		img {
 			width: 100%;
@@ -690,7 +693,10 @@ h1, h2, h3, h4, h5, h6 {
 		margin-bottom: 20px;
 	}
 	&__link {
+		display: block;
+		width: 35px;
 		height: 24px;
+		margin: 0 auto;
 		background: url("../img/arrow-link-right.png") no-repeat center center;
 	}
 	&__carousel {
@@ -700,6 +706,12 @@ h1, h2, h3, h4, h5, h6 {
 		.carousel-indicators {
 			bottom: 20px;
 		}
+	}
+}
+
+.modal {
+	.employee__photo {
+		max-width: 210px;
 	}
 }
 
