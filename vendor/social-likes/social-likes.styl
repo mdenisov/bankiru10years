@@ -1,0 +1,238 @@
+@import '../../mixins'
+@import '../../flat-ui/guideline'
+@import '../../components/icons/font-icons/style'
+@import '../../components/icons/font-icons'
+
+.social-likes
+	@extend $clearfix
+	display inline-block
+	position relative
+	user-select none
+
+	&__widget
+		display inline-block
+		line-height $lineHeightDefault
+		vertical-align middle
+		margin-right 10px
+
+		&:hover
+			.social-likes
+				&__counter
+					box-shadow 2px 2px 0 rgba(0,0,0,.1)
+				&__icon
+					&_facebook
+						color #415d93
+					&_twitter
+						color #38b7ea
+					&_vkontakte
+						color #4f7599
+					&_odnoklassniki
+						color #e67e17
+					&_livejournal
+						color #004359
+
+	&__button
+	&__counter
+		display inline-block
+
+	&__button
+		position relative
+		cursor pointer
+
+	&__icon
+		color $colorGrayBlue
+		font-size 18px
+		display inline-block
+		padding 5px 0
+
+		&_facebook
+		&_twitter
+		&_vkontakte
+		&_odnoklassniki
+		&_livejournal
+			@extend .icon-font
+
+		&_facebook
+			&:before
+				@extend .icon-facebook:before
+
+		&_twitter
+			&:before
+				@extend .icon-twitter:before
+
+		&_vkontakte
+			&:before
+				@extend .icon-vk:before
+
+		&_odnoklassniki
+			&:before
+				@extend .icon-odnoklassniki:before
+
+		&_livejournal
+			&:before
+				@extend .icon-lj-24:before
+
+	&__counter
+		color $colorGrayGray
+		font-size $fontSizeSmall
+		border 1px solid $colorBorderDark
+		background #FFFFFF
+		padding 2px 8px
+		margin-left 6px
+		vertical-align 2px
+		position relative
+		box-shadow none
+
+		&:after
+			content ''
+			display block
+			width 0
+			height 0
+			border-top 4px solid transparent
+			border-bottom 4px solid transparent
+			border-right 4px solid #ffffff
+			position absolute
+			top 50%
+			margin-top -4px
+			left -4px
+
+		&:before
+			content ''
+			display block
+			width 0
+			height 0
+			border-top 4px solid transparent
+			border-bottom 4px solid transparent
+			border-right 4px solid $colorBorderDark
+			position absolute
+			top 50%
+			margin-top -4px
+			left -5px
+
+		&_empty
+			display none
+
+
+.printing
+	@extend $clearfix
+	display inline-block
+	position relative
+	user-select none
+
+	&__widget
+		display inline-block
+		line-height $lineHeightDefault
+		vertical-align middle
+		/*margin-left 10px*/
+
+	&__icon
+		color $colorGrayBlue
+		font-size $fontSizeLarge
+		display inline-block
+		cursor pointer
+
+		&_print
+			@extend .icon-font
+
+			&:hover
+				color #3498db
+				text-decoration none
+			&:before
+				@extend .icon-print:before
+
+.like
+	@extend $clearfix
+	display inline-block
+	position relative
+	user-select none
+	float left // fix for another old pages
+
+	&:hover
+		.like__counter
+			box-shadow 2px 2px 0 rgba(0,0,0,.1)
+
+	&__widget
+		display inline-block
+		line-height $lineHeightDefault
+		vertical-align middle
+		margin-right 10px
+
+	&__counter
+		color $colorGrayGray
+		font-size $fontSizeSmall
+		border 1px solid $colorBorderDark
+		background #FFFFFF
+		padding 2px 8px
+		margin-left 6px
+		vertical-align 2px
+		position relative
+		display inline-block
+		box-shadow none
+
+		&:after
+			content ''
+			display block
+			width 0
+			height 0
+			border-top 4px solid transparent
+			border-bottom 4px solid transparent
+			border-right 4px solid #ffffff
+			position absolute
+			top 50%
+			margin-top -4px
+			left -4px
+
+		&:before
+			content ''
+			display block
+			width 0
+			height 0
+			border-top 4px solid transparent
+			border-bottom 4px solid transparent
+			border-right 4px solid $colorBorderDark
+			position absolute
+			top 50%
+			margin-top -4px
+			left -5px
+
+		&_empty
+			display none
+
+	&__icon
+		color $colorGrayBlue
+		font-size $fontSizeLarge
+		display inline-block
+		cursor pointer
+		padding 5px 0
+
+		&:hover
+			opacity 1
+
+		&--unvote
+			opacity .5
+
+		&_thumb-up
+			@extend .icon-font
+
+			&:hover
+				color #3498db
+				text-decoration none
+			&:before
+				@extend .icon-thumb-up:before
+
+		&_thumb-down
+			@extend .icon-font
+
+			&:hover
+				color #3498db
+				text-decoration none
+			&:before
+				@extend .icon-thumb-down:before
+
+.bottom-widgets
+	.like
+	.printing
+	.social-likes
+		padding 4px 0
+		min-height 26px
+		line-height 26px

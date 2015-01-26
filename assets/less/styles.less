@@ -689,8 +689,14 @@ h1, h2, h3, h4, h5, h6 {
 		margin-bottom: 14px;
 	}
 	&__text {
-		line-height: 25px;
 		margin-bottom: 20px;
+		line-height: 25px;
+		max-height: 250px;
+		overflow : hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 10;
+		-webkit-box-orient: vertical;
 	}
 	&__link {
 		display: block;
