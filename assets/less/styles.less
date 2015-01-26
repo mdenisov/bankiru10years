@@ -671,8 +671,8 @@ h1, h2, h3, h4, h5, h6 {
 		clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 
 		img {
-			width: 100%;
-			height: auto;
+//			width: 100%;
+//			height: auto;
 		}
 	}
 	&__name {
@@ -743,7 +743,12 @@ h1, h2, h3, h4, h5, h6 {
 		float: left;
 		display: inline-block;
 		margin-bottom: 14px;
+		overflow: hidden;
 		.square(100px);
+
+		img {
+			max-width: 100%;
+		}
 	}
 	&__name {
 		margin-left: 124px;

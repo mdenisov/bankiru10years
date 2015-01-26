@@ -139,12 +139,6 @@ $(function() {
 		interval: false
 	});
 
-	// Masonry
-	$('.forum').isotope({
-		itemSelector: '.forum__item',
-		layoutMode: 'masonry'
-	});
-
 	// Main menu
 	$body.on('click', '.menu__trigger', function(event) {
 		$body.toggleClass('menu--open');
@@ -239,6 +233,45 @@ $(function() {
 		}
 	];
 
+	var forum = [
+		{
+			id: 1,
+			photo: 'assets/img/forum-photo.png',
+			name: 'Олег Тиньков',
+			subname: 'глава банка «Тинькофф. Кредитные Системы»',
+			text: 'Изменение глобальной стратегии отражает принцип восприятия, опираясь на опыт западных коллег. Выставка, пренебрегая деталями, отталкивает медиаплан, оптимизируя бюджеты. Размещение интуитивно отталкивает рыночный традиционный канал, расширяя долю рынка. Коммуникация развивает медиавес, невзирая на действия конкурентов. В общем, продукт ускоряет медиавес.'
+		},
+		{
+			id: 2,
+			photo: 'assets/img/forum-photo.png',
+			name: 'Олег Тиньков',
+			subname: 'глава банка «Тинькофф. Кредитные Системы»',
+			text: 'Изменение глобальной стратегии отражает принцип восприятия, опираясь на опыт западных коллег.'
+		},
+		{
+			id: 3,
+			photo: 'assets/img/forum-photo.png',
+			name: 'Олег Тиньков',
+			subname: 'глава банка «Тинькофф. Кредитные Системы»',
+			text: 'Изменение глобальной стратегии отражает принцип восприятия, опираясь на опыт западных коллег. Выставка, пренебрегая деталями, отталкивает медиаплан, оптимизируя бюджеты. Размещение интуитивно отталкивает рыночный традиционный канал, расширяя долю рынка. Коммуникация развивает медиавес, невзирая на действия конкурентов. В общем, продукт ускоряет медиавес.'
+		},
+		{
+			id: 4,
+			photo: 'assets/img/forum-photo.png',
+			name: 'Олег Тиньков',
+			subname: 'глава банка «Тинькофф. Кредитные Системы»',
+			text: 'Изменение глобальной стратегии отражает принцип восприятия, опираясь на опыт западных коллег. Выставка, пренебрегая деталями, отталкивает медиаплан, оптимизируя бюджеты. Размещение интуитивно отталкивает рыночный традиционный канал, расширяя долю рынка. Коммуникация развивает медиавес, невзирая на действия конкурентов. В общем, продукт ускоряет медиавес.'
+		},
+		{
+			id: 5,
+			photo: 'assets/img/forum-photo.png',
+			name: 'Олег Тиньков',
+			subname: 'глава банка «Тинькофф. Кредитные Системы»',
+			text: 'Изменение глобальной стратегии отражает принцип восприятия, опираясь на опыт западных коллег.'
+		}
+	];
+
+
 	// Main Application
     var Router = Backbone.Router.extend({
         routes: {
@@ -301,6 +334,7 @@ $(function() {
 
 			this.$essays = this.$('#essays-carousel .carousel-inner');
 			this.$congratulations = this.$('#congratulations-carousel .carousel-inner');
+			this.$forum = this.$('#forum-container .forum');
 
 			this.essays = new App.Collections.Essays(essays);
 			this.essaysTpl = _.template($('#essays-template').html());
@@ -313,8 +347,14 @@ $(function() {
 
 			this.listenTo(this.congratulations, 'reset', this.addCongratulations);
 
+			this.forum = new App.Collections.Forum(forum);
+			this.forumItemTpl = _.template($('#forum-item-template').html());
+
+			this.listenTo(this.forum, 'reset', this.addForum);
+
 			this.addEssays();
 			this.addCongratulations();
+			this.addForum();
 
         },
 
@@ -353,6 +393,27 @@ $(function() {
 				.children()
 				.eq(0)
 				.addClass('active');
+		},
+
+		addForum: function() {
+			this.$forum.empty();
+			this.forum.each(function(item, index) {
+
+				//items.push(this.forumItemTpl(item.toJSON()));
+				this.$forum.append(this.forumItemTpl(item.toJSON()));
+
+			}, this);
+
+			this.$forum.isotope({
+				itemSelector: '.forum__item',
+				layoutMode: 'masonry'
+			});
+
+			//forumPane
+			//	.isotope()
+			//	.append( items )
+			//	.isotope( 'appended', items )
+			//	.isotope('layout');
 		}
 
 
@@ -409,6 +470,10 @@ $(function() {
 	});
 
 	App.Collections.Congratulations = Backbone.Collection.extend({
+		model: App.Models.Employee
+	});
+
+	App.Collections.Forum = Backbone.Collection.extend({
 		model: App.Models.Employee
 	});
 

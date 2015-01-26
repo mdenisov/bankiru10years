@@ -7192,10 +7192,6 @@ h6 {
   -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
-.employee__photo img {
-  width: 100%;
-  height: auto;
-}
 .employee__name {
   line-height: 25px;
   font-family: 'Fira Sans Bold';
@@ -7273,8 +7269,12 @@ h6 {
   float: left;
   display: inline-block;
   margin-bottom: 14px;
+  overflow: hidden;
   width: 100px;
   height: 100px;
+}
+.forum__photo img {
+  max-width: 100%;
 }
 .forum__name {
   margin-left: 124px;
