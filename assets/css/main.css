@@ -6486,6 +6486,24 @@ body {
   min-height: 38px;
   text-align: center;
 }
+.social-likes--invert .social-likes__icon_facebook {
+  background-position: 0 -38px;
+}
+.social-likes--invert .social-likes__icon_twitter {
+  background-position: -58px -38px;
+}
+.social-likes--invert .social-likes__icon_odnoklassniki {
+  background-position: -116px -38px;
+}
+.social-likes--invert .social-likes__icon_plusone {
+  background-position: -174px -38px;
+}
+.social-likes--invert .social-likes__icon_vkontakte {
+  background-position: -232px -38px;
+}
+.social-likes--invert .social-likes__icon_livejournal {
+  background-position: -290px -38px;
+}
 .social-likes__widget {
   margin: 6px;
   display: inline-block;
@@ -6933,6 +6951,9 @@ h6 {
   width: 100%;
   height: 275px;
   margin-top: 40px;
+}
+.footer-container__logo {
+  margin-bottom: 40px;
 }
 .timeline {
   position: absolute;
