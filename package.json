@@ -43,6 +43,7 @@
       "vendor/bower/isotope/dist/isotope.pkgd.js",
       "vendor/bower/skrollr/src/skrollr.js",
       "vendor/bower/queryloader2/queryloader2.min.js",
+      "vendor/bower/video.js/dist/video-js/video.js",
       "vendor/social-likes/lib/social-likes.js",
       "assets/js/**/*.js"
     ]

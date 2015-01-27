@@ -304,7 +304,6 @@ $(function() {
 		}
 	];
 
-
 	// Main Application
     var Router = Backbone.Router.extend({
         routes: {
