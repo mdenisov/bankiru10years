@@ -35,7 +35,7 @@ $(function() {
 			history11: '1400p',
 			essays: '1500p',
 			forum: '1600p',
-			footer: '1700p'
+			footer: '1800p'
 		},
 
 		edgeStrategy: 'set',
@@ -60,8 +60,28 @@ $(function() {
 		}
 	});
 
-	function skrollrUpdate(height) {
-		$(".forum-container").css('height', height);
+	function skrollrUpdate() {
+		//s.constants('section1', 700);
+		console.log(($body.height() - $(".forum-container").outerHeight()) / $(".forum-container").offset().top);
+
+		console.log(($body.height()) / $(".forum-container").offset().top);
+
+		//s.get().setConstants({
+		//	footer: ($body.height() / $(".forum-container").offset().top) * 100 + 'p'
+		//});
+
+		var realHeight = $window.height(),
+			forumHeight = $('.forum-container-wrapper .section__wrap').outerHeight();
+
+		$(".forum-container-wrapper")
+			.css('height', forumHeight)
+			.attr('data-_forum-'+ (forumHeight), 'top: -' + (forumHeight - realHeight) + 'px');
+
+		//console.log($(".footer-container").offset().top);
+		//
+		//$(".footer-container")
+		//	.attr('data-'+ (($body.height() / $(".footer-container").offset().top) * 100) + 'p', 'top: 0');
+
 		s.refresh();
 	}
 
@@ -408,7 +428,7 @@ $(function() {
 				layoutMode: 'masonry'
 			});
 
-			skrollrUpdate($('.forum-container-wrapper').height());
+			skrollrUpdate();
 
 			//forumPane
 			//	.isotope()
