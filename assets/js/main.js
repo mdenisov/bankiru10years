@@ -309,7 +309,8 @@ $(function() {
         routes: {
             "": "home",
             "video": "showVideo",
-            "essays/:id": "showEssays"
+            "greeting/team/:id": "showEssays",
+            "greeting/executive/:id": "showEssays"
         }
     });
 
