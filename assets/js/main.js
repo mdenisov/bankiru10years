@@ -60,9 +60,8 @@ $(function() {
 		}
 	});
 
-	function skrollrUpdate(videoHeight) {
-		var screenHeight = $window.height();
-		//$(".work-container").css('height', screenHeight);
+	function skrollrUpdate(height) {
+		$(".forum-container").css('height', height);
 		s.refresh();
 	}
 
@@ -408,6 +407,8 @@ $(function() {
 				itemSelector: '.forum__item',
 				layoutMode: 'masonry'
 			});
+
+			skrollrUpdate($('.forum-container-wrapper').height());
 
 			//forumPane
 			//	.isotope()
