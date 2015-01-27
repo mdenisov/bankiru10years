@@ -4,6 +4,9 @@
 
 	&--invert {
 		.social-likes__icon {
+			&:after {
+				box-shadow: inset 0 0 0 1px #ccc;
+			}
 			&_facebook {
 				background-position: 0 -38px;
 			}
@@ -42,12 +45,38 @@
 		height: 38px;
 		margin-top: 1px;
 		cursor: pointer;
+		position: relative;
 		opacity: .5;
 		background-repeat: no-repeat;
 		background-image: url("../img/social.png");
 
+		&:after {
+			pointer-events: none;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			border-radius: 50%;
+			content: '';
+			top: 0;
+			left: 0;
+			padding: 0;
+			box-shadow: inset 0 0 0 1px #596679;
+			transition: transform 0.2s, opacity 0.2s;
+			opacity: 1;
+			box-sizing: content-box;
+			transform: scale(1);
+		}
+
 		&:hover {
 			opacity: 1;
+
+			&:after {
+				top: -5px;
+				left: -5px;
+				padding: 5px;
+				transform: scale(1.2);
+				opacity: 0;
+			}
 		}
 
 		&_facebook {

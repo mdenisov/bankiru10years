@@ -6428,6 +6428,15 @@ body {
   height: 47px;
   background: url("../img/close.png");
   cursor: pointer;
+  -webkit-transition: -webkit-transform 0.3s;
+  -o-transition: -o-transform 0.3s;
+  transition: transform 0.3s;
+}
+.modal__close:hover {
+  -webkit-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
 }
 .modal__title {
   padding: 50px 0 40px;
@@ -6502,6 +6511,10 @@ body {
   min-height: 38px;
   text-align: center;
 }
+.social-likes--invert .social-likes__icon:after {
+  -webkit-box-shadow: inset 0 0 0 1px #ccc;
+  box-shadow: inset 0 0 0 1px #ccc;
+}
 .social-likes--invert .social-likes__icon_facebook {
   background-position: 0 -38px;
 }
@@ -6537,12 +6550,47 @@ body {
   height: 38px;
   margin-top: 1px;
   cursor: pointer;
+  position: relative;
   opacity: .5;
   background-repeat: no-repeat;
   background-image: url("../img/social.png");
 }
+.social-likes__icon:after {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  content: '';
+  top: 0;
+  left: 0;
+  padding: 0;
+  -webkit-box-shadow: inset 0 0 0 1px #596679;
+  box-shadow: inset 0 0 0 1px #596679;
+  -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+  -o-transition: -o-transform 0.2s, opacity 0.2s;
+  transition: transform 0.2s, opacity 0.2s;
+  opacity: 1;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
 .social-likes__icon:hover {
   opacity: 1;
+}
+.social-likes__icon:hover:after {
+  top: -5px;
+  left: -5px;
+  padding: 5px;
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
+  opacity: 0;
 }
 .social-likes__icon_facebook {
   background-position: 0 0;
@@ -7394,16 +7442,44 @@ https://github.com/videojs/video.js/blob/master/src/css/video-js.less */
   bottom: -80px;
 }
 .carousel-indicators li {
-  border: 1px solid #f1c40f;
   background: #f1c40f;
   margin: 0 8px;
-  width: 12px;
-  height: 12px;
+  position: relative;
+  border: 0 none;
+  width: 14px;
+  height: 14px;
 }
-.carousel-indicators .active {
-  border: 1px solid #000000;
-  background: #000000;
+.carousel-indicators li:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  border-radius: 50%;
+  background-color: #000000;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  -o-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  -o-transition: -o-transform 0.3s ease;
+  transition: transform 0.3s ease;
+}
+.carousel-indicators li.active {
+  background: #f1c40f;
   margin: 0 8px;
+  width: 14px;
+  height: 14px;
+}
+.carousel-indicators li.active:after {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
 }
 .btn,
 .btn-text {
