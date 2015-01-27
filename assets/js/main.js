@@ -355,6 +355,7 @@ $(function() {
 			App.router.on('route:showVideo', _.bind(function() {
 				this.modal.setContent($('#video-modal-template').html());
 				this.modal.open();
+				videojs('video');
 			}, this));
 
 			App.router.on('route:showEssays', _.bind(function(id) {
@@ -481,7 +482,6 @@ $(function() {
 			this.$('.modal').addClass('modal--open');
 
 			$('.social-likes').socialLikes();
-
 		},
 
 		close: function() {
