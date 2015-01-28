@@ -97,17 +97,17 @@
                                 <ul class="numerals">
                                     <li class="numerals__item">
                                         <div class="numerals__icon"></div>
-                                        <div class="numerals__digit">610 977</div>
+                                        <div class="numerals__digit" data-counter-start="0" data-counter-end="610977" data-counter-duration="1">0</div>
                                         <div class="numerals__description">зарегистрированных пользователей на форуме</div>
                                     </li>
                                     <li class="numerals__item">
                                         <div class="numerals__icon"></div>
-                                        <div class="numerals__digit">168 348</div>
+                                        <div class="numerals__digit" data-counter-start="0" data-counter-end="168348" data-counter-duration="1">168 348</div>
                                         <div class="numerals__description">отзывов в «Народном рейтинге»</div>
                                     </li>
                                     <li class="numerals__item">
                                         <div class="numerals__icon"></div>
-                                        <div class="numerals__digit">2 000 000</div>
+                                        <div class="numerals__digit" data-counter-start="0" data-counter-end="2000000" data-counter-duration="1">2 000 000</div>
                                         <div class="numerals__description">новостей опубликовано на Банки.ру за 10 лет</div>
                                     </li>
                                 </ul>
@@ -118,17 +118,17 @@
                                 <ul class="numerals">
                                     <li class="numerals__item">
                                         <div class="numerals__icon"></div>
-                                        <div class="numerals__digit">610 977</div>
+                                        <div class="numerals__digit" data-counter-start="0" data-counter-end="610977" data-counter-duration="1">0</div>
                                         <div class="numerals__description">зарегистрированных пользователей на форуме</div>
                                     </li>
                                     <li class="numerals__item">
                                         <div class="numerals__icon"></div>
-                                        <div class="numerals__digit">168 348</div>
+                                        <div class="numerals__digit" data-counter-start="0" data-counter-end="168348" data-counter-duration="1">168 348</div>
                                         <div class="numerals__description">отзывов в «Народном рейтинге»</div>
                                     </li>
                                     <li class="numerals__item">
                                         <div class="numerals__icon"></div>
-                                        <div class="numerals__digit">2 000 000</div>
+                                        <div class="numerals__digit" data-counter-start="0" data-counter-end="2000000" data-counter-duration="1">2 000 000</div>
                                         <div class="numerals__description">новостей опубликовано на Банки.ру за 10 лет</div>
                                     </li>
                                 </ul>
@@ -413,8 +413,8 @@
                 <small><%= subname %></small>
             </h3>
         </div>
-        <div class="modal__section">
-            <% if (typeof(video) != "undefined") { %>
+        <% if (typeof(video) != "undefined") { %>
+            <div class="modal__section modal__section--wide">
                 <video id="video" class="video-js vjs-default-skin" controls preload="auto" width="982" height="586" poster="http://www.videojs.com/img/poster.jpg">
                     <source src="http://vjs.zencdn.net/v/oceans.mp4" type='video/mp4'>
                     <p class="vjs-no-js">
@@ -422,7 +422,10 @@
                         that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
                     </p>
                 </video>
-            <% } else { %>
+            </div>
+        <% } %>
+        <div class="modal__section">
+            <% if (typeof(video) == "undefined") { %>
                 <figure class="person__photo">
                     <img src="<%= photo %>" alt=""/>
                 </figure>

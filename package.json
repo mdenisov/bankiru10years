@@ -45,6 +45,7 @@
       "vendor/bower/queryloader2/queryloader2.min.js",
       "vendor/bower/video.js/dist/video-js/video.js",
       "vendor/social-likes/lib/social-likes.js",
+      "vendor/bower/countUp.js/countUp.js",
       "assets/js/**/*.js"
     ]
   }

@@ -163,6 +163,33 @@ $(function() {
 		return false;
 	});
 
+	var animateCouner = function() {
+		var options = {
+			useEasing : true,
+			useGrouping : true,
+			separator : ' ',
+			decimal : '.',
+			prefix : '',
+			suffix : ''
+		};
+
+		$('.numerals__digit').each(function() {
+			var $target = $(this),
+				start = $target.data('counter-start') || 0,
+				end = $target.data('counter-end') || 0,
+				duration = $target.data('counter-duration') || 2.5,
+				counter = new countUp(this, start, end, 0, duration, options);
+
+			counter.start();
+		});
+	};
+
+	animateCouner();
+
+	$('#numerals-carousel').on('slid.bs.carousel', function () {
+		animateCouner();
+	});
+
 	var essays = [
 		{
 			id: 1,
