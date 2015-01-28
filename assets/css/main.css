@@ -8060,6 +8060,10 @@ h6 {
   position: relative !important;
   margin-top: 120px;
 }
+.modal .person__photo {
+  float: none;
+  margin: 0 auto 60px;
+}
 .numerals__carousel .item.active .numerals__item {
   visibility: visible;
   opacity: 1;

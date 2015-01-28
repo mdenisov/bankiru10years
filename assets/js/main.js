@@ -311,7 +311,7 @@ $(function() {
             "": "home",
             "video": "showVideo",
             "greeting/team/:id": "showEssays",
-            "greeting/executive/:id": "showEssays"
+            "greeting/executive/:id": "showCongratulations"
         }
     });
 
@@ -384,9 +384,24 @@ $(function() {
 				this.modal.open();
 			}, this));
 
+			App.router.on('route:showCongratulations', _.bind(function(id) {
+				this.modal.wait(true);
+
+				if (this.congratulations.length) {
+					this.modal.setContent(this.getCongratulationsHtmlById(id));
+					this.modal.wait(false);
+				} else {
+					this.on('essaysReady', function() {
+						this.modal.setContent(this.getCongratulationsHtmlById(id));
+						this.modal.wait(false);
+					});
+				}
+
+				this.modal.open();
+			}, this));
+
 			// Essays
 			this.$essays = this.$('#essays-carousel');
-			this.$essaysContent = $('#essays-carousel .carousel-inner');
 
 			this.essays = new App.Collections.Essays();
 			this.essaysTpl = _.template($('#essays-template').html());
@@ -398,7 +413,6 @@ $(function() {
 
 			// Congratulations
 			this.$congratulations = this.$('#congratulations-carousel');
-			this.$congratulationsContent = this.$('#congratulations-carousel .carousel-inner');
 			this.congratulations = new App.Collections.Congratulations();
 			this.congratulationsItemTpl = _.template($('#congratulations-item-template').html());
 
@@ -417,27 +431,40 @@ $(function() {
         },
 
 		addEssays: function() {
-			var html = '';
+			var count = 0,
+				html = '';
 
 			this.$essays.addClass('wait');
-			this.$essaysContent.empty();
+
+			var $content = this.$essays.children('.carousel-inner');
+			var $indicators = this.$essays.children('.carousel-indicators');
+
+			$content.empty();
+
 			this.essays.each(function(item, index) {
 				html += this.essaysItemTpl(item.toJSON());
 				if ((index + 1) % 4 === 0) {
-					this.$essaysContent.append(this.essaysTpl({item: html}));
+
+					$content.append(this.essaysTpl({item: html}));
+					count ++;
 					html = '';
 				}
 			}, this);
 
 			if (html) {
-				this.$essaysContent.append(this.essaysTpl({item: html}));
+				$content.append(this.essaysTpl({item: html}));
+				count ++;
 				html = '';
 			}
 
-			this.$essaysContent
+			$content
 				.children()
 				.eq(0)
 				.addClass('active');
+
+			for (var i = 0; i < count; i++) {
+				$indicators.append('<li data-target="#essays-carousel" data-slide-to="'+ i +'" '+ (i == 0 ? 'class="active"' : '') +'></li>');
+			}
 
 			this.$essays.removeClass('wait');
 
@@ -445,18 +472,29 @@ $(function() {
 		},
 
 		addCongratulations: function() {
+			var count = 0;
+
 			this.$congratulations.addClass('wait');
-			this.$congratulationsContent.empty();
+
+			var $content = this.$congratulations.children('.carousel-inner');
+			var $indicators = this.$congratulations.children('.carousel-indicators');
+
+			$content.empty();
 			this.congratulations.each(function(item, index) {
 
-				this.$congratulationsContent.append(this.congratulationsItemTpl(item.toJSON()));
+				$content.append(this.congratulationsItemTpl(item.toJSON()));
+				count ++;
 
 			}, this);
 
-			this.$congratulationsContent
+			$content
 				.children()
 				.eq(0)
 				.addClass('active');
+
+			for (var i = 0; i < count; i++) {
+				$indicators.append('<li data-target="#essays-carousel" data-slide-to="'+ i +'" '+ (i == 0 ? 'class="active"' : '') +'></li>');
+			}
 
 			this.$congratulations.removeClass('wait');
 
@@ -489,6 +527,13 @@ $(function() {
 		getEssaysHtmlById: function(id) {
 			var model = this.essays.get(id),
 				template = _.template($('#essays-modal-template').html());
+
+			return template(model.toJSON());
+		},
+
+		getCongratulationsHtmlById: function(id) {
+			var model = this.congratulations.get(id),
+				template = _.template($('#congratulations-modal-template').html());
 
 			return template(model.toJSON());
 		}
@@ -529,7 +574,10 @@ $(function() {
 			this.$el.removeClass('hidden');
 			this.$('.modal').addClass('modal--open');
 
-			$('.social-likes').socialLikes();
+			$('.social-likes').socialLikes({
+				url: location.href,
+				title: 'Beautiful “like” buttons with counters for popular social networks'
+			});
 		},
 
 		close: function() {
