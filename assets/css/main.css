@@ -6860,6 +6860,7 @@ fonts to show/hide properly.
   height: 4px;
   /* Set above the rest of the controls. */
   top: 16px;
+  z-index: 1;
   /* Shrink the bar slower than it grows. */
   /* transition */
   -webkit-transition: all 0.4s;
