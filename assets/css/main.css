@@ -6402,6 +6402,14 @@ body {
 .modal--open {
   opacity: 1;
 }
+.modal--wait .modal__container {
+  height: 500px;
+  background: url("../img/loader-icon_80x80_gray-orange.gif") no-repeat center center;
+}
+.modal--wait .modal__topbar,
+.modal--wait .modal__bottombar {
+  display: none;
+}
 .modal__wrapper {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -7480,6 +7488,15 @@ https://github.com/videojs/video.js/blob/master/src/css/video-js.less */
   -ms-transform: scale(1);
   -o-transform: scale(1);
   transform: scale(1);
+}
+.carousel.wait {
+  height: 500px;
+  background: url("../img/loader-icon_80x80_gray-orange.gif") no-repeat center center;
+}
+.carousel.wait .carousel-indicators,
+.carousel.wait .carousel-inner,
+.carousel.wait .carousel-control {
+  display: none;
 }
 .btn,
 .btn-text {

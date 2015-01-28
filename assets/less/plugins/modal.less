@@ -13,6 +13,16 @@
 		opacity: 1;
 	}
 
+	&--wait {
+		.modal__container {
+			height: 500px;
+			background: url("../img/loader-icon_80x80_gray-orange.gif") no-repeat center center;
+		}
+		.modal__topbar, .modal__bottombar {
+			display: none;
+		}
+	}
+
 	&__wrapper {
 		box-sizing: border-box;
 		position: fixed;

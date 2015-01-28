@@ -45,6 +45,17 @@
 	}
 }
 
+.carousel {
+	&.wait {
+		height: 500px;
+		background: url("../img/loader-icon_80x80_gray-orange.gif") no-repeat center center;
+
+		.carousel-indicators, .carousel-inner, .carousel-control {
+			display: none;
+		}
+	}
+}
+
 .text-bold() {
 	font-family: 'Fira Sans Bold';
 }
