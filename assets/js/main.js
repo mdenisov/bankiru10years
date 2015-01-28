@@ -364,7 +364,7 @@ $(function() {
 				this.modal.open();
 
                 this.video = videojs("video", {}, function() {
-                    console.log(this);
+
                 });
 			}, this));
 

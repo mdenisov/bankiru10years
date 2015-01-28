@@ -6394,10 +6394,9 @@ body {
   text-align: center;
   background: #fcfbf7 url("../img/pattern-2.png");
   opacity: 0;
-  /* transition */
-  -webkit-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
 }
 .modal--open {
   opacity: 1;
