@@ -390,7 +390,22 @@ $(function() {
 				this.modal.setContent($('#video-modal-template').html());
 				this.modal.open();
 
-                this.video = videojs("video", {}, function() {
+                this.video = videojs("video", {
+					controlBar: {
+						fullscreenToggle: false,
+						muteToggle: false,
+						currentTimeDisplay: false,
+						timeDivider: false,
+						durationDisplay: false,
+						remainingTimeDisplay: false,
+						volumeControl: {
+							volumeBar: false
+						},
+						volumeLevel: {
+							volumeHandle: false
+						}
+					}
+				}, function() {
 
                 });
 			}, this));

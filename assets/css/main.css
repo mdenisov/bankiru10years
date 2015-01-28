@@ -6853,13 +6853,13 @@ fonts to show/hide properly.
 */
 .vjs-default-skin .vjs-progress-control {
   position: absolute;
-  left: 0;
-  right: 0;
+  left: 50px;
+  right: 20px;
   width: auto;
   font-size: 0.3em;
   height: 4px;
   /* Set above the rest of the controls. */
-  top: -1em;
+  top: 16px;
   /* Shrink the bar slower than it grows. */
   /* transition */
   -webkit-transition: all 0.4s;
