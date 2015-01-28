@@ -131,7 +131,7 @@ $(function() {
 				var pos = $body.scrollTop();
 				$body.scrollTop(pos + 30);
 
-				if (pos === $body.scrollTop()) {
+				if ($body.scrollTop() >= $window.height() * 14) {
 					clearInterval(autoscroll);
 				}
 			}, 50);
@@ -143,6 +143,10 @@ $(function() {
 	// Carousel
 	$('.carousel').carousel({
 		interval: false
+	});
+
+	$('#numerals-carousel').on('slid.bs.carousel', function () {
+		animateCouner();
 	});
 
 	// Main menu
@@ -185,10 +189,6 @@ $(function() {
 	};
 
 	animateCouner();
-
-	$('#numerals-carousel').on('slid.bs.carousel', function () {
-		animateCouner();
-	});
 
 	var essays = [
 		{
