@@ -3105,6 +3105,7 @@ input[type="button"].btn-block {
   overflow: hidden;
   -webkit-background-size: 24px 24px;
   background-size: 24px;
+  vertical-align: middle;
   width: 24px;
   height: 24px;
 }
@@ -3137,6 +3138,12 @@ input[type="button"].btn-block {
   height: 128px;
   -webkit-background-size: 128px 128px;
   background-size: 128px;
+}
+.icon--top {
+  vertical-align: top;
+}
+.icon--bottom {
+  vertical-align: bottom;
 }
 .clearfix:before,
 .clearfix:after,
@@ -9017,10 +9024,6 @@ body.vjs-full-window {
 /* -----------------------------------------------------------------------------
 The original source of this file lives at
 https://github.com/videojs/video.js/blob/master/src/css/video-js.less */
-.icon {
-  display: inline-block;
-  vertical-align: -6px;
-}
 .scrolldown {
   margin-top: 40px;
 }
@@ -9108,7 +9111,6 @@ https://github.com/videojs/video.js/blob/master/src/css/video-js.less */
   text-transform: uppercase;
   border-radius: 0;
   padding: 15px 20px;
-  font-family: 'Fira Sans';
 }
 .btn:hover {
   border-color: #f2ca27;
@@ -10262,7 +10264,7 @@ textarea.form-control {
     margin-left: 360px;
   }
   .timeline,
-  .time {
+  .timeline .time {
     height: 350px;
   }
   .numerals {
