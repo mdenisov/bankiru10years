@@ -424,7 +424,7 @@
                 <small><%= subname %></small>
             </h3>
         </div>
-        <% if (typeof(video) != "undefined") { %>
+        <% if (video && typeof(video) !== "undefined") { %>
             <div class="modal__section modal__section--wide">
                 <video id="video" class="video-js vjs-default-skin" controls preload="auto" width="982" height="586" poster="http://www.videojs.com/img/poster.jpg">
                     <source src="http://vjs.zencdn.net/v/oceans.mp4" type='video/mp4'>
@@ -434,15 +434,14 @@
                     </p>
                 </video>
             </div>
-        <% } %>
-        <div class="modal__section">
-            <% if (typeof(video) == "undefined") { %>
+        <% } else { %>
+            <div class="modal__section">
                 <figure class="person__photo">
                     <img src="<%= photo %>" alt=""/>
                 </figure>
-            <% } %>
-            <%= text %>
-        </div>
+                <%= text %>
+            </div>
+        <% } %>
     </script>
 
     <!-- Application source. -->
