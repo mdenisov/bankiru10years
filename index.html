@@ -16,6 +16,8 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <noscript><link href="icons.fallback.css" rel="stylesheet"></noscript>
 </head>
 
 <body>
@@ -62,11 +64,11 @@
                     <ol class="carousel-indicators"></ol>
                     <div class="carousel-inner" role="listbox"></div>
                     <a class="left carousel-control" href="#congratulations-carousel" role="button" data-slide="prev">
-                        <!--<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>-->
+                        <span class="icon icon-left-orange" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                     </a>
                     <a class="right carousel-control" href="#congratulations-carousel" role="button" data-slide="next">
-                        <!--<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>-->
+                        <span class="icon icon-right-orange" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
                 </div>
@@ -135,12 +137,12 @@
                             </div>
                         </div>
                     </div>
-                    <a class="left carousel-control" href="#numerals-carousel" role="button" data-slide="prev">
-                        <!--<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>-->
+                    <a class="left carousel-control" href="#congratulations-carousel" role="button" data-slide="prev">
+                        <span class="icon icon-left-orange" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                     </a>
-                    <a class="right carousel-control" href="#numerals-carousel" role="button" data-slide="next">
-                        <!--<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>-->
+                    <a class="right carousel-control" href="#congratulations-carousel" role="button" data-slide="next">
+                        <span class="icon icon-right-orange" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
                 </div>
@@ -222,12 +224,12 @@
                 <div id="essays-carousel" class="carousel slide employee__carousel wait" data-ride="carousel">
                     <ol class="carousel-indicators"></ol>
                     <div class="carousel-inner" role="listbox"></div>
-                    <a class="left carousel-control" href="#essays-carousel" role="button" data-slide="prev">
-                        <!--<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>-->
+                    <a class="left carousel-control" href="#congratulations-carousel" role="button" data-slide="prev">
+                        <span class="icon icon-left-orange" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                     </a>
-                    <a class="right carousel-control" href="#essays-carousel" role="button" data-slide="next">
-                        <!--<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>-->
+                    <a class="right carousel-control" href="#congratulations-carousel" role="button" data-slide="next">
+                        <span class="icon icon-right-orange" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
                 </div>
@@ -324,7 +326,7 @@
                         <p class="person__name"><%= name %></p>
                         <p class="person__subname"><%= subname %></p>
                         <div class="person__text"><%= text %></div>
-                        <a href='#/greeting/executive/<%= id %>' class="btn btn-default">Посмотреть</a>
+                        <a href='#/greeting/executive/<%= id %>' class="btn btn-default"><span class="icon icon--24 icon-play-round-black"></span> Посмотреть</a>
                     </div>
                 </div>
             </div>
@@ -338,9 +340,18 @@
             </figure>
             <div class="employee__name"><%= name %></div>
             <div class="employee__subname"><%= subname %></div>
-            <div class="employee__meta"></div>
+            <div class="employee__meta">
+                <ul>
+                    <li>
+                        <span class="icon icon--24 icon-messages-grey"></span> 147
+                    </li>
+                    <li>
+                        <span class="icon icon--24 icon-view-grey"></span> 25
+                    </li>
+                </ul>
+            </div>
             <div class="employee__text"><%= text %></div>
-            <a href='#greeting/team/<%= id %>' class="employee__link"></a>
+            <a href='#greeting/team/<%= id %>' class="employee__link icon-thin-grey"></a>
         </li>
     </script>
 
@@ -357,7 +368,7 @@
     <script type="text/template" id="modal-template">
         <div class="modal__wrapper">
             <div class="modal">
-                <span class="modal__close"></span>
+                <span class="modal__close icon-cross-white"></span>
                 <div class="modal__container"></div>
                 <div class="modal__bottombar">
                     <div class="social-likes social-likes_light" data-counters="no">

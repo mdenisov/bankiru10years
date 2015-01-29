@@ -4,6 +4,8 @@ $(function() {
 	var $window = $(window),
 		$body = $("body");
 
+	grunticon(["dist/icons/icons.data.svg.css", "dist/icons/icons.data.png.css", "dist/icons/icons.fallback.css"]);
+
 	$body.queryLoader2({
 		barColor: "#671e59",
 		backgroundColor: "#FFFFFF",

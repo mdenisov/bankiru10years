@@ -1,12 +1,36 @@
 
+.icon {
+	display: inline-block;
+
+	&--24 {
+		background-size: 24px;
+		vertical-align: -6px;
+		.square(24px);
+	}
+}
+
 .carousel-control {
 	background: none;
 
-	&.right {
-		background: url("../img/arrow-right.png") no-repeat 90% 50%;
+	&.left, &.right {
+		background: none;
 	}
-	&.left {
-		background: url("../img/arrow-left.png") no-repeat 10% 50%;
+
+	.icon {
+		display: block;
+		width: 40px;
+		height: 40px;
+		background-size: 40px;
+		position: absolute;
+		top: 50%;
+		margin-top: -20px;
+
+		&.icon-left-orange {
+			left: 20px;
+		}
+		&.icon-right-orange {
+			right: 20px;
+		}
 	}
 }
 .carousel-indicators {
@@ -794,6 +818,20 @@ h1, h2, h3, h4, h5, h6 {
 	}
 	&__meta {
 		margin-bottom: 14px;
+
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+
+			li {
+				font-size: 14px;
+				padding: 0;
+				margin: 0 5px;
+				display: inline-block;
+				color: #7f8c8d;
+			}
+		}
 	}
 	&__text {
 		margin-bottom: 20px;
@@ -808,9 +846,9 @@ h1, h2, h3, h4, h5, h6 {
 	&__link {
 		display: block;
 		width: 35px;
-		height: 24px;
+		height: 35px;
 		margin: 0 auto;
-		background: url("../img/arrow-link-right.png") no-repeat center center;
+		background-size: 35px 35px;
 	}
 	&__carousel {
 		position: relative !important;

@@ -28,6 +28,7 @@
     "grunt-contrib-uglify": "~0.5.0",
     "grunt-contrib-watch": "~0.6.1",
     "grunt-csscomb": "~2.0.1",
+    "grunt-grunticon": "~2.0.1",
     "load-grunt-tasks": "~0.6.0",
     "time-grunt": "~0.3.2"
   },
@@ -44,8 +45,11 @@
       "vendor/bower/skrollr/src/skrollr.js",
       "vendor/bower/queryloader2/queryloader2.min.js",
       "vendor/bower/video.js/dist/video-js/video.js",
-      "vendor/social-likes/lib/social-likes.js",
       "vendor/bower/countUp.js/countUp.js",
+      "vendor/social-likes/lib/social-likes.js",
+
+      "assets/icons/grunticon.loader.js",
+
       "assets/js/**/*.js"
     ]
   }

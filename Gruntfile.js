@@ -10,7 +10,8 @@ module.exports = function(grunt) {
 
     // Task configuration.
     clean: {
-      dist: ['dist']
+      dist: ['dist'],
+      icons: ['assets/icons']
     },
     copy: {
       fonts: {
@@ -31,6 +32,12 @@ module.exports = function(grunt) {
         flatten: true,
         src: ['vendor/bower/skrollr/examples/fixed-positioning.css'],
         dest: 'dist/css'
+      },
+      icons: {
+        expand: true,
+        cwd: 'assets/icons/',
+        src: '**/*',
+        dest: 'dist/icons'
       }
     },
     concat: {
@@ -114,6 +121,26 @@ module.exports = function(grunt) {
         ext: '.min.css'
       }
     },
+    grunticon: {
+      icons: {
+        files: [{
+          expand: true,
+          cwd: 'assets/svg/',
+          src: ['*.svg'],
+          dest: "assets/icons"
+        }],
+        options: {
+          cssprefix: '.icon-',
+          colors: {
+            black: '#000000',
+            white: '#ffffff',
+            orange: '#f1c40f',
+            grey: '#7f8c8d'
+          },
+          dynamicColorOnly: true
+        }
+      }
+    },
     watch: {
       src: {
         files: 'assets/js/*.js',
@@ -141,7 +168,10 @@ module.exports = function(grunt) {
   grunt.registerTask('less-compile', ['less:compile']);
   grunt.registerTask('dist-css', ['less-compile', 'autoprefixer', 'cssmin']);
 
+  // Icons
+  grunt.registerTask('dist-icons', ['grunticon:icons', 'copy:icons']);
+
   // Default task.
-  grunt.registerTask('default', ['clean', 'copy:fonts', 'copy:images', 'copy:styles', 'dist-css', 'dist-js']);
+  grunt.registerTask('default', ['clean:dist', 'copy:fonts', 'copy:images', 'copy:styles', 'copy:icons', 'dist-css', 'dist-js', 'dist-icons']);
 
 };
