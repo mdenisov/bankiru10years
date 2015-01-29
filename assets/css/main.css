@@ -3099,6 +3099,45 @@ input[type="button"].btn-block {
   font-weight: normal;
   font-style: normal;
 }
+.icon {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  -webkit-background-size: 24px 24px;
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+.icon--s {
+  width: 16px;
+  height: 16px;
+  -webkit-background-size: 16px 16px;
+  background-size: 16px;
+}
+.icon--m {
+  width: 24px;
+  height: 24px;
+  -webkit-background-size: 24px 24px;
+  background-size: 24px;
+}
+.icon--l {
+  width: 32px;
+  height: 32px;
+  -webkit-background-size: 32px 32px;
+  background-size: 32px;
+}
+.icon--xl {
+  width: 64px;
+  height: 64px;
+  -webkit-background-size: 64px 64px;
+  background-size: 64px;
+}
+.icon--xxl {
+  width: 128px;
+  height: 128px;
+  -webkit-background-size: 128px 128px;
+  background-size: 128px;
+}
 .clearfix:before,
 .clearfix:after,
 .dl-horizontal dd:before,
@@ -7438,13 +7477,7 @@ The original source of this file lives at
 https://github.com/videojs/video.js/blob/master/src/css/video-js.less */
 .icon {
   display: inline-block;
-}
-.icon--24 {
-  -webkit-background-size: 24px 24px;
-  background-size: 24px;
   vertical-align: -6px;
-  width: 24px;
-  height: 24px;
 }
 .carousel-control {
   background: none;
