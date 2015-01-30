@@ -3,6 +3,7 @@
 .modal {
 	margin: auto;
 	width: auto;
+	height: 100%;
 	max-width: 982px;
 	text-align: center;
 	background: #fcfbf7 url("../img/pattern-2.png");
@@ -20,6 +21,12 @@
 		}
 		.modal__topbar, .modal__bottombar {
 			display: none;
+		}
+	}
+
+	&--with-nav {
+		.modal__nav {
+			display: block;
 		}
 	}
 
@@ -45,12 +52,44 @@
 		display: block;
 		width: 47px;
 		height: 47px;
-//		background: url("../img/close.png");
 		cursor: pointer;
 		transition: transform 0.3s;
 
 		&:hover {
 			transform: rotate(360deg);
+		}
+	}
+
+	&__nav {
+		box-sizing: border-box;
+		position: fixed;
+		top: 50%;
+		margin-top: -70px;
+		width: 65px;
+		height: 140px;
+		z-index: 666999;
+		padding: 0;
+		overflow: auto;
+		display: none;
+		line-height: 140px;
+		border: 1px solid #FFFFFF;
+		border-radius: 2px;
+		cursor: pointer;
+		user-select: none;
+		opacity: .5;
+		transition: opacity 0.3s;
+
+		&:hover {
+			opacity: 1;
+		}
+
+		&--left {
+			left: -1px;
+			margin-right: 5px;
+		}
+		&--right {
+			right: -1px;
+			margin-left: 5px;
 		}
 	}
 

@@ -266,7 +266,7 @@ $(function() {
 			name: 'Олег Тиньков',
 			subname: 'глава банка «Тинькофф. Кредитные Системы»',
 			video: '',
-			text: '�?зменение глобальной стратегии отражает принцип восприятия, опираясь на опыт западных коллег. Выставка, пренебрегая деталями, отталкивает медиаплан, оптимизируя бюджеты. Размещение интуитивно отталкивает рыночный традиционный канал, расширяя долю рынка. Коммуникация развивает медиавес, невзирая на действия конкурентов. В общем, продукт ускоряет медиавес.'
+			text: 'Размещение интуитивно отталкивает рыночный традиционный канал, расширяя долю рынка. Коммуникация развивает медиавес, невзирая на действия конкурентов. В общем, продукт ускоряет медиавес.'
 		}
 	];
 
@@ -343,13 +343,40 @@ $(function() {
             "video": "showVideo",
             "greeting/team/:id": "showEssays",
             "greeting/executive/:id": "showCongratulations"
-        }
+        },
+
+		current: function() {
+			var Router = this,
+				fragment = Backbone.history.fragment,
+				routes = _.pairs(Router.routes),
+				route = null, params = null, matched;
+
+			matched = _.find(routes, function(handler) {
+				route = _.isRegExp(handler[0]) ? handler[0] : Router._routeToRegExp(handler[0]);
+				return route.test(fragment);
+			});
+
+			if(matched) {
+				// NEW: Extracts the params using the internal
+				// function _extractParameters
+				params = Router._extractParameters(route, fragment);
+				route = matched[1];
+			}
+
+			return {
+				route : route,
+				fragment : fragment,
+				params : params
+			};
+		}
     });
 
     var App = {
         Models: {},
         Collections: {},
         Views: {},
+
+		Events: _.extend(Backbone.Events, {}),
 
         start: function(data) {
 			this.router = new Router();
@@ -361,8 +388,7 @@ $(function() {
 
         navigate: function(route) {
             this.router.navigate(route, {
-                trigger: true,
-                replace: true
+                trigger: true
             });
         }
     };
@@ -380,6 +406,25 @@ $(function() {
             this.video = null;
 
 			$('.app').html(this.modal.render().el);
+
+			videojs("home-video", {
+				controlBar: {
+					fullscreenToggle: false,
+					muteToggle: false,
+					currentTimeDisplay: false,
+					timeDivider: false,
+					durationDisplay: false,
+					remainingTimeDisplay: false,
+					volumeControl: {
+						volumeBar: false
+					},
+					volumeLevel: {
+						volumeHandle: false
+					}
+				}
+			}, function() {
+
+			});
 
 			App.router.on('route:home', _.bind(function() {
 
@@ -427,7 +472,7 @@ $(function() {
 					});
 				}
 
-				this.modal.open();
+				this.modal.open(true);
 			}, this));
 
 			App.router.on('route:showCongratulations', _.bind(function(id) {
@@ -443,7 +488,55 @@ $(function() {
 					});
 				}
 
-				this.modal.open();
+				this.modal.open(true);
+			}, this));
+
+			App.Events.on('modal:navigate', _.bind(function(direction) {
+				var curRoute = App.router.current();
+
+				if (curRoute.route === 'showCongratulations') {
+
+					var id = curRoute.params[0],
+						index = this.congratulations.indexOf(this.congratulations.get(id)),
+						size = this.congratulations.size() - 1;
+
+					if (direction === 'left') {
+						if ((index - 1) >= 0) {
+							index = index-1;
+						} else {
+							index = size;
+						}
+					} else {
+						if ((index + 1) <= size) {
+							index = index+1;
+						} else {
+							index = 0;
+						}
+					}
+					App.navigate('/greeting/executive/' + this.congratulations.at(index).get('id'));
+
+				} else if (curRoute.route === 'showEssays') {
+
+					var id = curRoute.params[0],
+						index = this.essays.indexOf(this.essays.get(id)),
+						size = this.essays.size() - 1;
+
+					if (direction === 'left') {
+						if ((index - 1) >= 0) {
+							index = index-1;
+						} else {
+							index = size;
+						}
+					} else {
+						if ((index + 1) <= size) {
+							index = index+1;
+						} else {
+							index = 0;
+						}
+					}
+
+					App.navigate('/greeting/team/' + this.essays.at(index).get('id'));
+				}
 			}, this));
 
 			// Essays
@@ -591,7 +684,7 @@ $(function() {
 
 		events: {
 			"click .modal__close"   	: "close",
-			//"click .modal__wrapper"   	: "close"
+			"click .modal__nav"   		: "navigate"
 		},
 
 		initialize: function() {
@@ -616,9 +709,13 @@ $(function() {
 			return this;
 		},
 
-		open: function() {
+		open: function(withNav) {
 			this.$el.removeClass('hidden');
 			this.$('.modal').addClass('modal--open');
+
+			if (withNav) {
+				this.$('.modal').addClass('modal--with-nav');
+			}
 
 			$('.social-likes').socialLikes({
 				url: location.href,
@@ -628,9 +725,17 @@ $(function() {
 
 		close: function() {
 			this.$el.addClass('hidden');
-			this.$('.modal').removeClass('modal--open');
+			this.$('.modal')
+				.removeClass('modal--open')
+				.removeClass('modal--with-nav');
 
 			this.afterClose();
+		},
+
+		navigate: function(event) {
+			var $target = $(event.currentTarget);
+
+			App.Events.trigger('modal:navigate', $target.data('direction'));
 		},
 
 		afterClose: function() {

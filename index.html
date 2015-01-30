@@ -48,7 +48,14 @@
                 <div class="balls right" data-0="margin-top:0px;" data-100p="margin-top:-100px;">
                     <img src="assets/img/balls-right.png" alt=""/>
                 </div>
-                <a href="#/video" class="video"></a>
+
+                <video id="home-video" class="video video-js vjs-default-skin" controls preload="auto" width="982" height="586" poster="http://www.videojs.com/img/poster.jpg">
+                    <source src="http://vjs.zencdn.net/v/oceans.mp4" type='video/mp4'>
+                    <p class="vjs-no-js">
+                        To view this video please enable JavaScript, and consider upgrading to a web browser
+                        that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                    </p>
+                </video>
 
                 <div class="icon icon--xl icon-expand-white animated infinite bounce scrolldown"></div>
 
@@ -383,6 +390,12 @@
                         <div class="livejournal" title="Поделиться ссылкой в LiveJournal">LiveJournal</div>
                     </div>
                 </div>
+                <span class="modal__nav modal__nav--left" data-direction="left">
+                    <span class="icon icon-left-white"></span>
+                </span>
+                <span class="modal__nav modal__nav--right" data-direction="right">
+                    <span class="icon icon-right-white"></span>
+                </span>
             </div>
         </div>
     </script>
