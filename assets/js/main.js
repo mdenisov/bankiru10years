@@ -632,7 +632,7 @@ $(function() {
 				.addClass('active');
 
 			for (var i = 0; i < count; i++) {
-				$indicators.append('<li data-target="#essays-carousel" data-slide-to="'+ i +'" '+ (i == 0 ? 'class="active"' : '') +'></li>');
+				$indicators.append('<li data-target="#congratulations-carousel" data-slide-to="'+ i +'" '+ (i == 0 ? 'class="active"' : '') +'></li>');
 			}
 
 			this.$congratulations.removeClass('wait');
@@ -676,7 +676,6 @@ $(function() {
 
 			return template(model.toJSON());
 		}
-
     });
 
 	App.Views.ModalView = Backbone.View.extend({
