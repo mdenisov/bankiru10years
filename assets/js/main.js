@@ -22,7 +22,7 @@ $(function() {
 
 		constants: {
 			congratulations: '0',
-			numerals: '120p',
+			numerals: '100p',
 			history: '200p',
 			history1: '300p',
 			history2: '400p',
@@ -69,6 +69,9 @@ $(function() {
 		$(".forum-container-wrapper")
 			.css('height', forumHeight)
 			.attr('data-_forum-'+ (forumHeight), 'top: -' + (forumHeight - realHeight) + 'px');
+
+		$(".balloon")
+			.attr('data-_forum-'+ (forumHeight), 'margin-top: -200px');
 
 		s.refresh();
 	}
@@ -142,15 +145,6 @@ $(function() {
 		}
 	});
 
-	// Carousel
-	$('.carousel').carousel({
-		interval: false
-	});
-
-	$('#numerals-carousel').on('slid.bs.carousel', function () {
-		animateCouner();
-	});
-
 	// Main menu
 	$body.on('click', '.menu__trigger', function(event) {
 		$body.toggleClass('menu--open');
@@ -162,7 +156,6 @@ $(function() {
 			delta = $item.children().data('goto');
 
 		$body.toggleClass('menu--open');
-		//$.scrollTo( hash );
 
 		$body.scrollTop($window.height() * delta);
 
@@ -170,6 +163,7 @@ $(function() {
 	});
 
 	$('.numerals__carousel').slick({
+		infinite: false,
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		speed: 500,
@@ -599,8 +593,7 @@ $(function() {
         },
 
 		addEssays: function() {
-			var count = 0,
-				html = '';
+			var html = '';
 
 			this.$essays
 				.addClass('wait')
@@ -610,19 +603,18 @@ $(function() {
 				html += this.essaysItemTpl(item.toJSON());
 				if ((index + 1) % 4 === 0) {
 					this.$essays.append(this.essaysTpl({item: html}));
-					count ++;
 					html = '';
 				}
 			}, this);
 
 			if (html) {
 				this.$essays.append(this.essaysTpl({item: html}));
-				count ++;
 				html = '';
 			}
 
 			this.$essays.removeClass('wait');
 			this.$essays.slick({
+				infinite: false,
 				slidesToShow: 1,
 				slidesToScroll: 1,
 				speed: 500,
@@ -649,6 +641,7 @@ $(function() {
 			this.trigger('congratulationsReady');
 
 			this.$congratulations.slick({
+				infinite: false,
 				slidesToShow: 1,
 				slidesToScroll: 1,
 				speed: 500,
@@ -658,6 +651,7 @@ $(function() {
 			});
 
 			this.$video.slick({
+				//infinite: false,
 				centerMode: true,
 				centerPadding: '60px',
 				slidesToShow: 3,
