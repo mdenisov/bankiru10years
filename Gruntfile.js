@@ -24,7 +24,7 @@ module.exports = function(grunt) {
         expand: true,
 //				cwd: '.',
         flatten: true,
-        src: ['assets/img/*'],
+        src: ['assets/img/*', 'vendor/bower/slick-carousel/slick/*.gif'],
         dest: 'dist/img'
       },
       styles: {

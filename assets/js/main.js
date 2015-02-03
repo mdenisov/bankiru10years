@@ -22,7 +22,7 @@ $(function() {
 
 		constants: {
 			congratulations: '0',
-			numerals: '85p',
+			numerals: '120p',
 			history: '200p',
 			history1: '300p',
 			history2: '400p',
@@ -262,6 +262,22 @@ $(function() {
 		},
 		{
 			id: 2,
+			photo: 'assets/img/person-photo.png',
+			name: 'Олег Тиньков',
+			subname: 'глава банка «Тинькофф. Кредитные Системы»',
+			video: '',
+			text: 'Размещение интуитивно отталкивает рыночный традиционный канал, расширяя долю рынка. Коммуникация развивает медиавес, невзирая на действия конкурентов. В общем, продукт ускоряет медиавес.'
+		},
+		{
+			id: 3,
+			photo: 'assets/img/person-photo.png',
+			name: 'Олег Тиньков',
+			subname: 'глава банка «Тинькофф. Кредитные Системы»',
+			video: '',
+			text: '�?зменение глобальной стратегии отражает принцип восприятия, опираясь на опыт западных коллег. Выставка, пренебрегая деталями, отталкивает медиаплан, оптимизируя бюджеты. Размещение интуитивно отталкивает рыночный традиционный канал, расширяя долю рынка. Коммуникация развивает медиавес, невзирая на действия конкурентов. В общем, продукт ускоряет медиавес.'
+		},
+		{
+			id: 4,
 			photo: 'assets/img/person-photo.png',
 			name: 'Олег Тиньков',
 			subname: 'глава банка «Тинькофф. Кредитные Системы»',
@@ -551,9 +567,11 @@ $(function() {
 			this.essays.reset(essays);
 
 			// Congratulations
-			this.$congratulations = this.$('#congratulations-carousel');
+			this.$congratulations = this.$('.person__carousel');
+			this.$video = this.$('.video__carousel');
 			this.congratulations = new App.Collections.Congratulations();
 			this.congratulationsItemTpl = _.template($('#congratulations-item-template').html());
+			this.congratulationsVideoItemTpl = _.template($('#video-item-template').html());
 
 			this.listenTo(this.congratulations, 'reset', this.addCongratulations);
 
@@ -611,33 +629,49 @@ $(function() {
 		},
 
 		addCongratulations: function() {
-			var count = 0;
+			this.$congratulations
+				.addClass('wait')
+				.empty();
 
-			this.$congratulations.addClass('wait');
-
-			var $content = this.$congratulations.children('.carousel-inner');
-			var $indicators = this.$congratulations.children('.carousel-indicators');
-
-			$content.empty();
 			this.congratulations.each(function(item, index) {
-
-				$content.append(this.congratulationsItemTpl(item.toJSON()));
-				count ++;
-
+				this.$congratulations.append(this.congratulationsItemTpl(item.toJSON()));
+				this.$video.append(this.congratulationsVideoItemTpl(item.toJSON()));
 			}, this);
-
-			$content
-				.children()
-				.eq(0)
-				.addClass('active');
-
-			for (var i = 0; i < count; i++) {
-				$indicators.append('<li data-target="#congratulations-carousel" data-slide-to="'+ i +'" '+ (i == 0 ? 'class="active"' : '') +'></li>');
-			}
 
 			this.$congratulations.removeClass('wait');
 
 			this.trigger('congratulationsReady');
+
+			//this.$congratulations.slick('unslick');
+			//this.$congratulations.slick({
+			//	slidesToShow: 3,
+			//	slidesToScroll: 1,
+			//	speed: 500,
+			//	arrows: true,
+			//	dots: true,
+			//	centerMode: true,
+			//	focusOnSelect: true,
+			//	slide: '.item'
+			//});
+
+			this.$congratulations.slick({
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				speed: 500,
+				slide: '.item',
+				prevArrow: '<span class="slick-prev-icon icon icon-left-orange"></span>',
+				nextArrow: '<span class="slick-next-icon icon icon-right-orange"></span>'
+			});
+
+			this.$video.slick({
+				centerMode: true,
+				centerPadding: '60px',
+				slidesToShow: 3,
+				slide: '.item',
+				prevArrow: '<span class="slick-prev-icon icon icon-left-orange"></span>',
+				nextArrow: '<span class="slick-next-icon icon icon-right-orange"></span>'
+			});
+
 		},
 
 		addForum: function() {

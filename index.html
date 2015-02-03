@@ -64,23 +64,18 @@
 
     </div>
 
-    <div id="congratulations-container" class="section section--center congratulations-container" data-_congratulations="top:100%;" data-100p="top:0%;">
+    <div id="congratulations-container" class="section section--center congratulations-container" data-_congratulations="top:100%;" data-120p="top:-20%;">
 
         <div class="section__wrap">
             <header class="section__header" data-0="margin-top: -20px; opacity: 0;" data-25p="margin-top: 0px; opacity: 1;">Поздравления от первых лиц</header>
             <section class="section__content">
 
-                <div id="congratulations-carousel" class="carousel slide person__carousel wait" data-ride="carousel">
-                    <ol class="carousel-indicators"></ol>
-                    <div class="carousel-inner" role="listbox"></div>
-                    <a class="left carousel-control" href="#congratulations-carousel" role="button" data-slide="prev">
-                        <span class="icon icon-left-orange" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="right carousel-control" href="#congratulations-carousel" role="button" data-slide="next">
-                        <span class="icon icon-right-orange" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
+                <div class="person__carousel wait">
+
+                </div>
+
+                <div class="video__carousel wait">
+
                 </div>
 
             </section>
@@ -88,10 +83,10 @@
 
     </div>
 
-    <div id="numerals-container" class="section section--invert section--center numerals-container" data-0="top:100%;" data-_numerals="top:100%;" data-100p="top:85%;" data-200p="top:0%;">
+    <div id="numerals-container" class="section section--invert section--center numerals-container" data-_numerals="top:100%;" data-_numerals-100p="top:0%;">
 
         <div class="section__wrap">
-            <header class="section__header" data-85p="margin-top: -20px; opacity: 0;" data-110p="margin-top: 0px; opacity: 1;">
+            <header class="section__header" data-_numerals="margin-top: -20px; opacity: 0;" data-_numerals-25p="margin-top: 0px; opacity: 1;">
                 Цифры десятилетия<br />
                 <small>Жизненно утверждающий слоган который побуждает</small>
             </header>
@@ -336,32 +331,47 @@
                         <p class="person__name"><%= name %></p>
                         <p class="person__subname"><%= subname %></p>
                         <div class="person__text"><%= text %></div>
-                        <a href='#/greeting/executive/<%= id %>' class="btn btn-default"><span class="icon icon--m icon-play-round-black"></span> Посмотреть</a>
+                        <a href='#/greeting/executive/<%= id %>' class="btn btn-default">Прочитать</a>
                     </div>
                 </div>
             </div>
         </div>
     </script>
 
+    <script type="text/template" id="video-item-template">
+        <div class="item">
+            <div class="video">
+                <p class="video__name"><%= name %></p>
+                <p class="video__subname"><%= subname %></p>
+                <figure class="video__photo">
+                    <a href='#/greeting/executive/<%= id %>'>
+                        <img src="<%= photo %>" alt=""/>
+                    </a>
+                </figure>
+            </div>
+        </div>
+    </script>
+
     <script type="text/template" id="essays-item-template">
         <li class="employee__item">
-            <figure class="employee__photo">
-                <img src="<%= photo %>" alt=""/>
-            </figure>
-            <div class="employee__name"><%= name %></div>
-            <div class="employee__subname"><%= subname %></div>
-            <div class="employee__meta">
-                <ul>
-                    <li>
-                        <span class="icon icon--m icon-messages-grey"></span> 147
-                    </li>
-                    <li>
-                        <span class="icon icon--m icon-view-grey"></span> 25
-                    </li>
-                </ul>
-            </div>
-            <div class="employee__text"><%= text %></div>
-            <a href='#greeting/team/<%= id %>' class="employee__link icon-thin-grey"></a>
+            <a href='#greeting/team/<%= id %>' class="employee__link">
+                <figure class="employee__photo">
+                    <img src="<%= photo %>" alt=""/>
+                </figure>
+                <div class="employee__name"><%= name %></div>
+                <div class="employee__subname"><%= subname %></div>
+                <div class="employee__meta">
+                    <ul>
+                        <li>
+                            <span class="icon icon--m icon-messages-grey"></span> 147
+                        </li>
+                        <li>
+                            <span class="icon icon--m icon-view-grey"></span> 25
+                        </li>
+                    </ul>
+                </div>
+                <div class="employee__text"><%= text %></div>
+            </a>
         </li>
     </script>
 

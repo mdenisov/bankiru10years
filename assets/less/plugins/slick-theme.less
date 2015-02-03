@@ -1,0 +1,100 @@
+@charset 'UTF-8';
+/* Slider */
+.slick-loading .slick-list
+{
+    background: #fff url('../img/ajax-loader.gif') center center no-repeat;
+}
+
+.slick {
+
+    /* Arrows */
+    &-prev-icon, &-next-icon {
+        position: absolute;
+        top: 50%;
+        margin-top: -20px;
+        background-size: 40px;
+        display: block;
+        cursor: pointer;
+        opacity: .5;
+        .square(40px);
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+    &-prev-icon {
+        left: 0;
+    }
+    &-next-icon {
+        right: 0;
+    }
+
+    /* Dots */
+    &-slider
+    {
+        margin-bottom: 30px;
+    }
+    &-dots {
+        position: absolute;
+        bottom: -45px;
+        display: block;
+        width: 100%;
+        padding: 0;
+        list-style: none;
+        text-align: center;
+
+        li {
+            position: relative;
+            display: inline-block;
+            margin: 0 5px;
+            padding: 0;
+            .square(20px);
+
+            cursor: pointer;
+
+            &.slick-active {
+                button {
+                    &:after {
+                        -webkit-transform: scale(1);
+                        transform: scale(1);
+                    }
+                }
+            }
+            button {
+                font-size: 0;
+                line-height: 0;
+                display: block;
+                padding: 0;
+                cursor: pointer;
+                color: transparent;
+                border: 0;
+                outline: none;
+                background: #f1c40f;
+                border-radius: 50%;
+                .square(20px);
+
+                &:before {
+                    display: none;
+                }
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    left: 0;
+                    top: 0;
+                    border-radius: 50%;
+                    background-color: #000000;
+                    transform: scale(0);
+                    transform-origin: 50% 50%;
+                    transition: transform 0.3s ease;
+                }
+            }
+        }
+    }
+
+    &.slick-active {
+
+    }
+}
