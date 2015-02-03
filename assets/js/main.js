@@ -169,6 +169,17 @@ $(function() {
 		return false;
 	});
 
+	$('.numerals__carousel').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		speed: 500,
+		slide: '.item',
+		prevArrow: '<span class="slick-prev-icon icon icon-left-orange"></span>',
+		nextArrow: '<span class="slick-next-icon icon icon-right-orange"></span>'
+	}).on('beforeChange', function(event, slick, currentSlide, nextSlide){
+		animateCouner();
+	});
+
 	var animateCouner = function() {
 		var options = {
 			useEasing : true,
@@ -556,7 +567,7 @@ $(function() {
 			}, this));
 
 			// Essays
-			this.$essays = this.$('#essays-carousel');
+			this.$essays = this.$('.employee__carousel');
 
 			this.essays = new App.Collections.Essays();
 			this.essaysTpl = _.template($('#essays-template').html());
@@ -591,39 +602,34 @@ $(function() {
 			var count = 0,
 				html = '';
 
-			this.$essays.addClass('wait');
-
-			var $content = this.$essays.children('.carousel-inner');
-			var $indicators = this.$essays.children('.carousel-indicators');
-
-			$content.empty();
+			this.$essays
+				.addClass('wait')
+				.empty();
 
 			this.essays.each(function(item, index) {
 				html += this.essaysItemTpl(item.toJSON());
 				if ((index + 1) % 4 === 0) {
-
-					$content.append(this.essaysTpl({item: html}));
+					this.$essays.append(this.essaysTpl({item: html}));
 					count ++;
 					html = '';
 				}
 			}, this);
 
 			if (html) {
-				$content.append(this.essaysTpl({item: html}));
+				this.$essays.append(this.essaysTpl({item: html}));
 				count ++;
 				html = '';
 			}
 
-			$content
-				.children()
-				.eq(0)
-				.addClass('active');
-
-			for (var i = 0; i < count; i++) {
-				$indicators.append('<li data-target="#essays-carousel" data-slide-to="'+ i +'" '+ (i == 0 ? 'class="active"' : '') +'></li>');
-			}
-
 			this.$essays.removeClass('wait');
+			this.$essays.slick({
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				speed: 500,
+				slide: '.item',
+				prevArrow: '<span class="slick-prev-icon icon icon-left-orange"></span>',
+				nextArrow: '<span class="slick-next-icon icon icon-right-orange"></span>'
+			});
 
 			this.trigger('essaysReady');
 		},
@@ -641,18 +647,6 @@ $(function() {
 			this.$congratulations.removeClass('wait');
 
 			this.trigger('congratulationsReady');
-
-			//this.$congratulations.slick('unslick');
-			//this.$congratulations.slick({
-			//	slidesToShow: 3,
-			//	slidesToScroll: 1,
-			//	speed: 500,
-			//	arrows: true,
-			//	dots: true,
-			//	centerMode: true,
-			//	focusOnSelect: true,
-			//	slide: '.item'
-			//});
 
 			this.$congratulations.slick({
 				slidesToShow: 1,
