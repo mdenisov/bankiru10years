@@ -22,8 +22,8 @@ $(function() {
 
 		constants: {
 			congratulations: '0',
-			numerals: '100p',
-			history: '200p',
+			numerals: '120p',
+			history:  '200p',
 			history1: '300p',
 			history2: '400p',
 			history3: '500p',
@@ -682,10 +682,10 @@ $(function() {
 
 			this.$video.removeClass('wait');
 			this.$video.slick({
-				//infinite: false,
 				centerMode: true,
 				centerPadding: '60px',
 				slidesToShow: 3,
+				slidesToScroll: 1,
 				slide: '.item',
 				prevArrow: '<span class="slick-prev-icon icon icon-left-orange"></span>',
 				nextArrow: '<span class="slick-next-icon icon icon-right-orange"></span>'

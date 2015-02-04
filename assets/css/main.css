@@ -8114,7 +8114,7 @@ h6 {
   transition: opacity 0.5s;
 }
 .menu__trigger {
-  position: fixed;
+  position: absolute;
   top: 56px;
   right: 60px;
   display: block;
@@ -8312,7 +8312,7 @@ h6 {
   top: 0;
   left: 0;
 }
-.video-container .video {
+.video-container .video-js {
   position: relative;
   width: 980px;
   height: 552px;
@@ -8332,13 +8332,13 @@ h6 {
 .video-container .balls.left {
   width: 172px;
   height: 531px;
-  top: 240px;
+  top: -50px;
   margin-left: -597px;
 }
 .video-container .balls.right {
   width: 160px;
   height: 479px;
-  top: 215px;
+  top: -70px;
   margin-left: 450px;
 }
 .header-container {
@@ -8354,7 +8354,7 @@ h6 {
   z-index: 10;
 }
 .congratulations-container {
-  height: 100%;
+  height: 120%;
   background: #fcfbf7 url("../img/pattern-2.png");
   padding-top: 40px;
   z-index: 20;
@@ -8369,7 +8369,7 @@ h6 {
   background: url("../img/pattern-3.png");
 }
 .numerals-container {
-  height: 100%;
+  height: 80%;
   background: #b19c71;
   background: -webkit-linear-gradient(45deg, #62635d 0%, #828271 34%, #756045 73%, #282828 100%);
   background: -o-linear-gradient(45deg, #62635d 0%, #828271 34%, #756045 73%, #282828 100%);
@@ -8446,8 +8446,10 @@ h6 {
 }
 .video {
   width: 100%;
-  display: block;
   padding: 0 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .video:before,
 .video:after {
@@ -8471,7 +8473,7 @@ h6 {
   overflow: hidden;
   margin-bottom: 20px;
   background: #000000;
-  padding-top: 75%;
+  padding-top: 53%;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -8487,28 +8489,17 @@ h6 {
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0;
+  opacity: .5;
   background-position: center;
   -webkit-background-size: 116px 116px;
   background-size: 116px;
   background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20version%3D%221.1%22%20id%3D%22Capa_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%20width%3D%2230.052px%22%20height%3D%2230.048px%22%20viewBox%3D%220%200%2030.052%2030.048%22%20style%3D%22enable-background%3Anew%200%200%2030.052%2030.048%3B%22%20xml%3Aspace%3D%22preserve%22%3E%3Cpath%20d%3D%22M19.982%2C14.436L13.742%2C9.9c-0.229-0.166-0.533-0.191-0.784-0.062c-0.253%2C0.128-0.411%2C0.388-0.411%2C0.669v9.069%20c0%2C0.284%2C0.158%2C0.543%2C0.411%2C0.671c0.107%2C0.054%2C0.224%2C0.081%2C0.342%2C0.081c0.154%2C0%2C0.31-0.049%2C0.442-0.146l6.24-4.532%20c0.197-0.145%2C0.312-0.369%2C0.312-0.607C20.295%2C14.801%2C20.177%2C14.578%2C19.982%2C14.436z%22%20fill%3D%22%23ffffff%22%3E%3C%2Fpath%3E%3Cpath%20d%3D%22M15.026%2C0C6.726%2C0%2C0%2C6.726%2C0%2C15.026c0%2C8.297%2C6.726%2C15.021%2C15.026%2C15.021c8.298%2C0%2C15.025-6.725%2C15.025-15.021%20C30.052%2C6.726%2C23.324%2C0%2C15.026%2C0z%20M15.026%2C27.54c-6.912%2C0-12.516-5.601-12.516-12.514c0-6.91%2C5.604-12.518%2C12.516-12.518%20c6.911%2C0%2C12.514%2C5.607%2C12.514%2C12.518C27.541%2C21.939%2C21.937%2C27.54%2C15.026%2C27.54z%22%20fill%3D%22%23ffffff%22%3E%3C%2Fpath%3E%3Cg%20fill%3D%22%23ffffff%22%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23ffffff%22%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23ffffff%22%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23ffffff%22%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23ffffff%22%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23ffffff%22%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23ffffff%22%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23ffffff%22%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23ffffff%22%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23ffffff%22%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23ffffff%22%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23ffffff%22%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23ffffff%22%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23ffffff%22%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23ffffff%22%3E%3C%2Fg%3E%3C%2Fsvg%3E');
   background-repeat: no-repeat;
-  -webkit-transform: scale(0.5);
-  -ms-transform: scale(0.5);
-  -o-transform: scale(0.5);
-  transform: scale(0.5);
-  -webkit-transition: -webkit-transform .2s, opacity .2s;
-  -o-transition: -o-transform .2s, opacity .2s;
-  transition: transform .2s, opacity .2s;
+  -webkit-transition: opacity .2s;
+  -o-transition: opacity .2s;
+  transition: opacity .2s;
 }
 .video__photo:hover:after {
-  opacity: .8;
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  -o-transform: scale(1);
-  transform: scale(1);
-}
-.slick-active .video__photo img {
   opacity: 1;
 }
 .video__photo img {
@@ -8517,7 +8508,6 @@ h6 {
   left: 0;
   right: 0;
   bottom: 0;
-  opacity: .5;
   display: block;
   width: 100%;
   height: auto;
@@ -9059,6 +9049,60 @@ h6 {
 .main__content:after {
   clear: both;
 }
+@-webkit-keyframes slideDown {
+  0% {
+    -webkit-transform: translate3d(0, 0px, 0);
+    transform: translate3d(0, 0px, 0);
+  }
+  50% {
+    -webkit-transform: translate3d(0, -15px, 0);
+    transform: translate3d(0, -15px, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-o-keyframes slideDown {
+  0% {
+    -o-transform: translate3d(0, 0px, 0);
+    transform: translate3d(0, 0px, 0);
+  }
+  50% {
+    -o-transform: translate3d(0, -15px, 0);
+    transform: translate3d(0, -15px, 0);
+  }
+  100% {
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes slideDown {
+  0% {
+    -webkit-transform: translate3d(0, 0px, 0);
+    -o-transform: translate3d(0, 0px, 0);
+    transform: translate3d(0, 0px, 0);
+  }
+  50% {
+    -webkit-transform: translate3d(0, -15px, 0);
+    -o-transform: translate3d(0, -15px, 0);
+    transform: translate3d(0, -15px, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.slideDown {
+  -webkit-animation-name: slideDown;
+  -o-animation-name: slideDown;
+  animation-name: slideDown;
+  -webkit-transform-origin: center bottom;
+  -ms-transform-origin: center bottom;
+  -o-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
 @media screen and (max-height: 800px) {
   .section__wrap {
     padding: 20px 0;
@@ -9066,7 +9110,7 @@ h6 {
   .header-container img {
     width: 150px;
   }
-  .video-container .video {
+  .video-container .video-js {
     position: relative;
     width: 800px;
     height: 406px;
@@ -9078,11 +9122,9 @@ h6 {
     z-index: 1;
   }
   .video-container .balls.left {
-    top: 240px;
     margin-left: -507px;
   }
   .video-container .balls.right {
-    top: 215px;
     margin-left: 360px;
   }
   .timeline,
