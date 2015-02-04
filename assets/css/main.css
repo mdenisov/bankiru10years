@@ -8114,7 +8114,7 @@ h6 {
   transition: opacity 0.5s;
 }
 .menu__trigger {
-  position: absolute;
+  position: fixed;
   top: 56px;
   right: 60px;
   display: block;
