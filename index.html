@@ -222,14 +222,6 @@
 
     <div id="forum-container" class="section section--invert section--center forum-container" data-_forum="top:100%;" data-_forum-100p="top:0px;">
 
-        <div class="balloon balloon--blue" data-_forum="margin-top:0px;">
-            <img src="assets/img/balls-blue.png" alt=""/>
-        </div>
-
-        <div class="balloon balloon--red" data-_forum="margin-top:0px;">
-            <img src="assets/img/balls-red.png" alt=""/>
-        </div>
-
         <div class="forum-container-wrapper" data-_forum-100p="top:0px;" style="width: 100%;">
             <div class="section__wrap">
                 <header class="section__header" data-_forum="margin-top: -20px; opacity: 0;" data-_forum-25p="margin-top: 0px; opacity: 1;">Поздравления форума</header>
@@ -237,11 +229,14 @@
                 <section class="section__content">
 
                     <div class="section__container">
+
+                        <a class="goto-forum" href="#/">Написать поздравление</a>
+
                         <ul class="forum">
 
                         </ul>
 
-                        <button class="btn btn-default">Перейти на форум</button>
+                        <button class="btn btn-default">Показать еще</button>
                     </div>
 
                 </section>
@@ -328,11 +323,12 @@
             <div class="video">
                 <p class="video__name"><%= name %></p>
                 <p class="video__subname"><%= subname %></p>
-                <figure class="video__photo">
-                    <a href='#/greeting/executive/<%= id %>'>
+
+                <a href='#/greeting/executive/<%= id %>'>
+                    <figure class="video__photo">
                         <img src="<%= photo %>" alt=""/>
-                    </a>
-                </figure>
+                    </figure>
+                </a>
             </div>
         </div>
     </script>

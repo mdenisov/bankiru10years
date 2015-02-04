@@ -71,7 +71,7 @@ $(function() {
 			.attr('data-_forum-'+ (forumHeight), 'top: -' + (forumHeight - realHeight) + 'px');
 
 		$(".balloon")
-			.attr('data-_forum-'+ (forumHeight), 'margin-top: -200px');
+			.attr('data-_forum-'+ (forumHeight), 'margin-top: -300px');
 
 		s.refresh();
 	}
@@ -106,11 +106,38 @@ $(function() {
 	}
 
 	videoResize();
+	distributionBalloon();
 
 	$(window).resize(function() {
 		videoResize();
         skrollrUpdate();
 	});
+
+	function distributionBalloon() {
+		var $container = $('#forum-container'),
+			$wrapper = $(".forum-container-wrapper"),
+			numBalloon = 10,
+			balloon = '<div class="balloon balloon--{color}" data-_forum="margin-top:0px;"><img src="assets/img/balloon-{color}.png" alt=""/></div>',
+			balloons = [
+				'red',
+				'green',
+				'blue',
+				'orange',
+				'pink',
+				'lightblue'
+			];
+
+		var ww = $wrapper.width();
+		var wh = $wrapper.height() + 2000;
+
+		for (var x=1; x<=numBalloon; x++) {
+			var posx = Math.round(Math.random() * ww)-100;
+			var posy = Math.round(Math.random() * wh);
+
+			$container.prepend($(balloon.replace(/\{color\}/g, balloons[Math.floor(Math.random()*balloons.length)])).css("top", posy + "px").css("left", posx + "px"));
+		}
+	}
+
 
 	// Slide navigation
 	$body.on('click', '.timeline__link:not("#auto")', function(event) {
@@ -631,15 +658,18 @@ $(function() {
 				.addClass('wait')
 				.empty();
 
+			this.$video
+				.addClass('wait')
+				.empty();
+
 			this.congratulations.each(function(item, index) {
 				this.$congratulations.append(this.congratulationsItemTpl(item.toJSON()));
 				this.$video.append(this.congratulationsVideoItemTpl(item.toJSON()));
 			}, this);
 
-			this.$congratulations.removeClass('wait');
-
 			this.trigger('congratulationsReady');
 
+			this.$congratulations.removeClass('wait');
 			this.$congratulations.slick({
 				infinite: false,
 				slidesToShow: 1,
@@ -650,6 +680,7 @@ $(function() {
 				nextArrow: '<span class="slick-next-icon icon icon-right-orange"></span>'
 			});
 
+			this.$video.removeClass('wait');
 			this.$video.slick({
 				//infinite: false,
 				centerMode: true,
