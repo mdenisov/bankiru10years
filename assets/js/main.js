@@ -99,6 +99,7 @@ $(function() {
 		//videoWrapper.css('margin-left', -(videoWrapper.width() / 2));
 		//$('#worldImg').css('margin-left', -(videoWrapper.width() / 2)).css('margin-top', -(videoWrapper.height() / 2));
 		$(".video-container").css('height', screenHeight);
+		//$("#history-container .section__wrap").css('height', screenHeight);
 		//$("#intro01").css('height', screenHeight);
 		//$(".work-container").css('height', screenHeight - 80);
 		//$(".history").css('height', screenHeight - 80);

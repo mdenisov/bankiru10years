@@ -8274,6 +8274,11 @@ h6 {
   padding: 40px 0;
   height: 100%;
 }
+.section__wrap--abs {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
 .section__content {
   position: relative;
 }
@@ -8286,6 +8291,9 @@ h6 {
   margin-bottom: 36px;
   width: 100%;
   position: relative !important;
+}
+.section__header--abs {
+  position: absolute !important;
 }
 .section__header small {
   font-size: 40px;
@@ -8393,6 +8401,12 @@ h6 {
   -o-transform: skew(-45deg, 0);
   transform: skew(-45deg, 0);
   background: rgba(0, 0, 0, 0.1);
+}
+.history-container__item {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 .essays-container {
   height: 100%;
@@ -8948,17 +8962,21 @@ h6 {
 .timeline ul li .bullet {
   width: 14px;
   height: 14px;
-  border: 1px solid #95628b;
+  border: 1px solid #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 50%;
   background: #671e59;
   display: inline-block;
   float: left;
   margin: 0 10px 0 20px;
+  -webkit-transition: background .2s, border .2s;
+  -o-transition: background .2s, border .2s;
+  transition: background .2s, border .2s;
 }
 .timeline .time {
   width: 1px;
-  background: #95628b;
+  background: #ffffff;
+  background: rgba(255, 255, 255, 0.3);
   position: absolute;
   top: 0;
   left: 26px;
@@ -8997,6 +9015,45 @@ h6 {
 .balloon--lightblue {
   width: 65px;
   height: 206px;
+}
+.tooltip {
+  position: absolute !important;
+  width: 620px;
+  height: 465px;
+  pointer-events: none;
+  left: 50%;
+  top: 50%;
+  margin-top: -230px;
+  margin-left: -288px;
+}
+.tooltip__content {
+  color: #000000;
+  position: absolute !important;
+  line-height: 1.2;
+  pointer-events: none;
+  text-align: center;
+  z-index: 100;
+  opacity: 0;
+  padding: 6em 4em;
+  font-size: 1.05em;
+  top: 0;
+  left: 0;
+  width: 560px;
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  -o-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+}
+.tooltip svg {
+  stroke: #e74c3c;
+  stroke-width: 2;
+}
+.tooltip svg path {
+  fill: #fff;
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  -o-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
 }
 .btn-text {
   background: none;

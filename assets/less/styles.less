@@ -272,6 +272,12 @@ h1, h2, h3, h4, h5, h6 {
 	&__wrap {
 		padding: 40px 0;
 		height: 100%;
+
+		&--abs {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
 	}
 	&__content {
 		position: relative;
@@ -285,6 +291,10 @@ h1, h2, h3, h4, h5, h6 {
 		margin-bottom: 36px;
 		width: 100%;
 		position: relative !important;
+
+		&--abs {
+			position: absolute !important;
+		}
 
 		small {
 			font-size: 40px;
@@ -399,6 +409,12 @@ h1, h2, h3, h4, h5, h6 {
 //		background: linear-gradient(to top left, rgba(0,0,0,.1) 0%, rgba(0,0,0,.1) 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 100%);
 	}
 
+	&__item {
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
 }
 
 .essays-container {
@@ -898,20 +914,22 @@ h1, h2, h3, h4, h5, h6 {
 			.bullet {
 				width: 14px;
 				height: 14px;
-				border: 1px solid #95628b;
+				border: 1px solid #ffffff;
 				border: 1px solid rgba(255,255,255,.5);
 				border-radius: 50%;
 				background: #671e59;
 				display: inline-block;
 				float: left;
 				margin: 0 10px 0 20px;
+				transition: background .2s, border .2s;
 			}
 		}
 	}
 
 	.time {
 		width: 1px;
-		background: #95628b;
+		background: #ffffff;
+		background: rgba(255,255,255,.3);
 		position: absolute;
 		top: 0;
 		left: 26px;
@@ -952,6 +970,44 @@ h1, h2, h3, h4, h5, h6 {
 
 
 
+
+.tooltip {
+	position: absolute !important;
+	width: 620px;
+	height: 465px;
+	pointer-events: none;
+	left: 50%;
+	top: 50%;
+	margin-top: -230px;
+	margin-left: -288px;
+
+	&__content {
+		color: #000000;
+		position: absolute !important;
+		line-height: 1.2;
+		pointer-events: none;
+		text-align: center;
+		z-index: 100;
+		opacity: 0;
+		padding: 6em 4em;
+		font-size: 1.05em;
+		top: 0;
+		left: 0;
+
+		width: 560px;
+		transform-origin: 50% 50%;
+	}
+
+	svg {
+		stroke: #e74c3c;
+		stroke-width: 2;
+
+		path {
+			fill: #fff;
+			transform-origin: 50% 50%;
+		}
+	}
+}
 
 
 
